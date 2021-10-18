@@ -1,6 +1,6 @@
 ### Class #8
 
-#### Bioinformática Prática 2020
+#### Bioinformática Prática 2021
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
@@ -192,9 +192,9 @@ for (i in c(3:5)){
 * Use automated code! <!-- .element: class="fragment" data-fragment-index="4" -->
 * Make the data/code available  <!-- .element: class="fragment" data-fragment-index="5" -->
 
-[Now is a good chance to show github](https://github.com/StuntsPT/BP2020) <!-- .element: class="fragment" data-fragment-index="6" -->
+[Now is a good chance to show github](https://github.com/StuntsPT/BP2021) <!-- .element: class="fragment" data-fragment-index="6" -->
 
-[Now is a good chance to show gitlab](https://gitlab.com/StuntsPT/bp2020) <!-- .element: class="fragment" data-fragment-index="6" -->
+[Now is a good chance to show gitlab](https://gitlab.com/StuntsPT/bp2021) <!-- .element: class="fragment" data-fragment-index="6" -->
 
 ---
 
@@ -352,5 +352,5 @@ sorteio = function(names_file, seed) {
     return(shuffled_names)
 }
 
-print(sorteio("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
+print(sorteio("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
 ```

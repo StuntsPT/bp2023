@@ -1,6 +1,6 @@
 ### Class #1
 
-#### Bioinformática Prática 2020
+#### Bioinformática Prática 2021
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
@@ -14,11 +14,11 @@
 
 **1ª semana**
 
-* 26-10-2020 – Introdução à disciplina; organização e tratamento de dados
-* 27-10-2020 – Introdução ao R
-* 28-10-2020 – **Dia de Ciências**
-* 29-10-2020 – Gráficos em R
-* 30-10-2020 – *Revisão de conceitos estatísticos*
+* 26-10-2021 – Introdução à disciplina; organização e tratamento de dados
+* 27-10-2021 – Introdução ao R
+* 28-10-2021 – **Dia de Ciências**
+* 29-10-2021 – Gráficos em R
+* 30-10-2021 – *Revisão de conceitos estatísticos*
 
 |||
 
@@ -26,11 +26,11 @@
 
 **2ª semana**
 
-* 02-11-2020 – Testes de hipóteses
-* 03-11-2020 – Testes de hipóteses II
-* 04-11-2020 – **Journal Club** (14-16h) - Seminário
-* 05-11-2020 – Análise exploratória
-* 06-11-2020 – Automatização e reprodutibilidade
+* 02-11-2021 – Testes de hipóteses
+* 03-11-2021 – Testes de hipóteses II
+* 04-11-2021 – **Journal Club** (14-16h) - Seminário
+* 05-11-2021 – Análise exploratória
+* 06-11-2021 – Automatização e reprodutibilidade
 
 |||
 
@@ -38,11 +38,11 @@
 
 **3ª semana**
 
-* 09-11-2020 – Revisões (14h-16h) - Seminário
-* 10-11-2020 – **Apresentações**
-* 11-11-2020 – **Apresentações**
-* 12-11-2020 – Exercícios
-* 13-11-2020 – **Exame TP**
+* 09-11-2021 – Revisões (14h-16h) - Seminário
+* 10-11-2021 – **Apresentações**
+* 11-11-2021 – **Apresentações**
+* 12-11-2021 – Exercícios
+* 13-11-2021 – **Exame TP**
 
 ---
 
@@ -107,5 +107,5 @@ sorteio = function(names_file, seed) {
     return(shuffled_names)
 }
 
-print(sorteio("https://gitlab.com/StuntsPT/bp2020/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
+print(sorteio("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
 ```
