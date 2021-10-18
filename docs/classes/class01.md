@@ -4,9 +4,9 @@
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
-<center>Francisco Pina Martins</center>
+Francisco Pina Martins
 
-<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+[@FPinaMartins](https://twitter.com/FPinaMartins)
 
 ---
 
@@ -14,11 +14,11 @@
 
 **1ª semana**
 
-* 26-10-2021 – Introdução à disciplina; organização e tratamento de dados
-* 27-10-2021 – Introdução ao R
-* 28-10-2021 – **Dia de Ciências**
-* 29-10-2021 – Gráficos em R
-* 30-10-2021 – *Revisão de conceitos estatísticos*
+* 25-10-2021 – Introdução à disciplina; organização e tratamento de dados
+* 26-10-2021 – Introdução ao R
+* 27-10-2021 – **Dia de Ciências**
+* 28-10-2021 – Gráficos em R
+* 29-10-2021 – Testes de hipóteses I
 
 |||
 
@@ -26,11 +26,11 @@
 
 **2ª semana**
 
-* 02-11-2021 – Testes de hipóteses
-* 03-11-2021 – Testes de hipóteses II
-* 04-11-2021 – **Journal Club** (14-16h) - Seminário
-* 05-11-2021 – Análise exploratória
-* 06-11-2021 – Automatização e reprodutibilidade
+* 01-11-2021 – Testes de hipóteses II
+* 02-11-2021 – Análise exploratória
+* 03-11-2021 – **Journal Club** (14-16h) - Seminário
+* 04-11-2021 – Automatização e reprodutibilidade
+* 05-11-2021 – Revisões
 
 |||
 
@@ -38,11 +38,11 @@
 
 **3ª semana**
 
-* 09-11-2021 – Revisões (14h-16h) - Seminário
-* 10-11-2021 – **Apresentações**
-* 11-11-2021 – **Apresentações**
-* 12-11-2021 – Exercícios
-* 13-11-2021 – **Exame TP**
+* 08-11-2021 – **Apresentações**
+* 09-11-2021 – **Apresentações**
+* 10-11-2021 – Revisões (14-16h) - Seminário
+* 11-11-2021 – Exercícios
+* 12-11-2021 – **Exame TP**
 
 ---
 
@@ -65,7 +65,7 @@
 
 ## Seminários
 
-* Apresentação individual de 15 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
+* Apresentação individual de 10 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
   * Discussão de 5 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
 * Enviem um artigo científico à vossa escolha por email <!-- .element: class="fragment" data-fragment-index="2" -->
   * Focar a apresentação nos conteúdos relacionados com o programa da UC <!-- .element: class="fragment" data-fragment-index="2" -->
