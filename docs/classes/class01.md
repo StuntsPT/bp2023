@@ -14,7 +14,7 @@ Francisco Pina Martins
 
 **1ª semana**
 
-* 25-10-2021 – Introdução à disciplina; organização e tratamento de dados
+* 25-10-2021 – Apresentação; organização e tratamento de dados
 * 26-10-2021 – Introdução ao R
 * 27-10-2021 – **Dia de Ciências**
 * 28-10-2021 – Gráficos em R
@@ -26,11 +26,11 @@ Francisco Pina Martins
 
 **2ª semana**
 
-* 01-11-2021 – Testes de hipóteses II
-* 02-11-2021 – Análise exploratória
-* 03-11-2021 – **Journal Club** (14-16h) - Seminário
-* 04-11-2021 – Automatização e reprodutibilidade
-* 05-11-2021 – Revisões
+* 01-11-2021 – FERIADO
+* 02-11-2021 – Testes de hipóteses II
+* 03-11-2021 – Análise exploratória
+* 04-11-2021 – **Journal Club** (14-16h) - Seminário
+* 05-11-2021 – Automatização e reprodutibilidade
 
 |||
 
