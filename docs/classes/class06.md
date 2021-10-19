@@ -101,10 +101,10 @@ legend("topright", inset=.05, title="Distributions",
 ### Example
 
 ```R
-obs = c(2235, 2301)
-exp = c(0.5, 0.5)
+obsvd = c(2235, 2301)
+exptd = c(0.5, 0.5)
 
-chisq.test(x=obs, p=exp)
+chisq.test(x=obsvd, p=exptd)
 ```
 
 ---
@@ -133,31 +133,31 @@ Are F2 individuals' proportions according to the expectation of 1:2:1 ? <!-- .el
 ## Multiple testing example
 
 ```R
-obs = c(1300, 3000, 1500)
-exp = c(0.25, 0.5, 0.25)
+obsvd = c(1300, 3000, 1500)
+exptd = c(0.25, 0.5, 0.25)
 
-chisq.test(x=obs, p=exp)
+chisq.test(x=obsvd, p=exptd)
 
 p_vals = c()
 
-partial_obs = c(obs[1], sum(obs[-1]))
-partial_exp = c(exp[1], sum(exp[-1]))
+partial_obs = c(obsvd[1], sum(obsvd[-1]))
+partial_exp = c(exptd[1], sum(exptd[-1]))
 part_chisq = chisq.test(x=partial_obs, p=partial_exp)
 
 pvalue = part_chisq$p.value
 
 p_vals = c(p_vals, pvalue)
 
-partial_obs = c(obs[2], sum(obs[-2]))
-partial_exp = c(exp[2], sum(exp[-2]))
+partial_obs = c(obsvd[2], sum(obsvd[-2]))
+partial_exp = c(exptd[2], sum(exptd[-2]))
 part_chisq = chisq.test(x=partial_obs, p=partial_exp)
 
 pvalue = part_chisq$p.value
 
 p_vals = c(p_vals, pvalue)
 
-partial_obs = c(obs[3], sum(obs[-3]))
-partial_exp = c(exp[3], sum(exp[-3]))
+partial_obs = c(obsvd[3], sum(obsvd[-3]))
+partial_exp = c(exptd[3], sum(exptd[-3]))
 part_chisq = chisq.test(x=partial_obs, p=partial_exp)
 
 pvalue = part_chisq$p.value
@@ -173,16 +173,16 @@ p.adjust(p_vals, method="fdr")
 ## Multiple testing example
 
 ```R
-obs = c(1300, 3000, 1500)
-exp = c(0.25, 0.5, 0.25)
+obsvd = c(1300, 3000, 1500)
+exptd = c(0.25, 0.5, 0.25)
 
-chisq.test(x=obs, p=exp)
+chisq.test(x=obsvd, p=exptd)
 
 p_vals = c()
 
 for (i in 1:length(obs)) {
-    partial_obs = c(obs[i], sum(obs[-i]))
-    partial_exp = c(exp[i], sum(exp[-i]))
+    partial_obs = c(obsvd[i], sum(obsvd[-i]))
+    partial_exp = c(exptd[i], sum(exptd[-i]))
     part_chisq = chisq.test(x=partial_obs, p=partial_exp)
     
     p_vals[i] = part_chisq$p.value
@@ -209,12 +209,12 @@ p.adjust(p_vals, method="fdr")
 ### Let's try another example
 
 ```R
-obs = c(3, 11)
-exp = c(0.5, 0.5)
+obsvd = c(3, 11)
+exptd = c(0.5, 0.5)
 
-chisq.test(x=obs, p=exp)
+chisq.test(x=obsvd, p=exptd)
 
-binom.test(x=obs[1], n=sum(obs), p=exp[1], conf.level=0.95)
+binom.test(x=obsvd[1], n=sum(obsvd), p=exptd[1], conf.level=0.95)
 ```
 
 |||
@@ -227,12 +227,12 @@ if(!require("XNomial")){
         library("XNomial")
 	}
 
-	obs = c(4, 27, 12)
-	exp = c(0.25, 0.5, 0.25)
+	obsvd = c(4, 27, 12)
+	exptd = c(0.25, 0.5, 0.25)
 
-	chisq.test(x=obs, p=exp)
+	chisq.test(x=obsvd, p=exptd)
 
-	xmulti(obs=obs, expr=exp)
+	xmulti(obs=obsvd, expr=exptd)
 ```
 
 ---
