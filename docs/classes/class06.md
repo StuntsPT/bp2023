@@ -2,11 +2,11 @@
 
 #### Bioinformática Prática 2021
 
-<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+![Logo FCUL](C01_assets/logo-FCUL.png)
 
-<center>Francisco Pina Martins</center>
+Francisco Pina Martins
 
-<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+[@FPinaMartins](https://twitter.com/FPinaMartins)
 
 ---
 
@@ -24,36 +24,27 @@
 
 ### When can they be performed?
 
-<ul>
-<li class="fragment" data-fragment-index="1">When the data consists of:</li>
-  <ul>
-  <li class="fragment" data-fragment-index="2">Categorical variables</li>
-  <li class="fragment" data-fragment-index="2">Counts data</li>
-  </ul>
-</ul>
+* &shy;<!-- .element:  class="fragment" data-fragment-index="1"-->When the data consists of:
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"-->Categorical variables
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"-->Counts data
 
 ---
 
 ### Why are they necessary?
 
 * When comparing observation counts to an expectation
-* Examples: <!-- .element: class="fragment" data-fragment-index="1" -->
-	* Is our sample of male and female individuals representative of the population's sex ratio? <!-- .element: class="fragment" data-fragment-index="1" -->
-	* Are our counts of crossed flower colours matched to the expected Mendelian inheritance? <!-- .element: class="fragment" data-fragment-index="2" -->
-
+* Examples:<!-- .element: class="fragment" data-fragment-index="1" -->
+  * "Is our sample of male and female individuals distributed according to the population's sex ratio?"<!-- .element: class="fragment" data-fragment-index="1" -->
+  * "Are our counts of crossed flower colours matched to the expected Mendelian inheritance?"<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
 ### What are they?
 
-<ul>
-<li class="fragment" data-fragment-index="1">There are several ways to test the [conformance to expectations](https://www.youtube.com/watch?v=7jMlFXouPk8) (goodness of fit)</li>
-  <ul>
-  <li class="fragment" data-fragment-index="2"><span class="fragment highlight-green" data-fragment-index="3">(Pearson's) Chi² test</span></li>
-  <li class="fragment" data-fragment-index="2"><span class="fragment fade-out" data-fragment-index="3">G-test</span></li>
-  <li class="fragment" data-fragment-index="2"><span class="fragment highlight-green" data-fragment-index="3">Binomial/multinomial test</span></li>
-  </ul>
-</ul>
+* &shy;<!-- .element:  class="fragment" data-fragment-index="1"-->There are several ways to test the [conformance to expectations](https://www.youtube.com/watch?v=7jMlFXouPk8) (goodness of fit)
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"--><span class="fragment highlight-green" data-fragment-index="3">(Pearson's) Chi² test</span>
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"--><span class="fragment fade-out" data-fragment-index="3">G-test</span>
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"--><span class="fragment highlight-green" data-fragment-index="3">Binomial/multinomial test</span>
 
 ---
 
@@ -92,16 +83,16 @@ legend("topright", inset=.05, title="Distributions",
 
 ### The Null hypothesis
 
-"The number of observatons in each category is not different from the expectation" <!-- .element: class="fragment" data-fragment-index="1" -->
+"The number of observations in each category is not significantly different from the expectation" <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
 ### Example
 
 * Consider the sex ratio of grasshoppers *Dichroplus maculipennis* (Blanchard)
-	* 6038 individuals were collected and sexed <!-- .element: class="fragment" data-fragment-index="1" -->
-	* 2235 females and 2301 males <!-- .element: class="fragment" data-fragment-index="2" -->
-	* The expected proportion of female:male ratio is 1:1 <!-- .element: class="fragment" data-fragment-index="3" -->
+  * 6038 individuals were collected and sexed <!-- .element: class="fragment" data-fragment-index="1" -->
+  * 2235 females and 2301 males <!-- .element: class="fragment" data-fragment-index="2" -->
+  * The expected proportion of female:male ratio is 1:1 <!-- .element: class="fragment" data-fragment-index="3" -->
 
 [Reference](http://www.sciencedirect.com/science/article/pii/S0085562615000321) <!-- .element: class="fragment" data-fragment-index="4" -->
 
@@ -121,23 +112,19 @@ chisq.test(x=obs, p=exp)
 ### Multiple testing
 
 * When there are more than 2 categories
-	* Each category can be tested against the sum of all other categories <!-- .element: class="fragment" data-fragment-index="1" -->
-	* FDR or Bonferroni corrections must be applied <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Each category can be tested against the sum of all other categories <!-- .element: class="fragment" data-fragment-index="1" -->
+  * FDR or Bonferroni corrections must be applied <!-- .element: class="fragment" data-fragment-index="2" -->
 
 |||
 
 ### Multiple testing example
 
-<ul>
-<li class="fragment">Suppose we have flowers where alleles determine colour <font color="red">AA</font>, <font color="pink">Aa</font>, <font color="white">aa</font>.</li>
-  <ul>
-  <li class="fragment">This trait has Mendelian inheritance</li>
-  <li class="fragment">All F0 males are <font color="white">white</font></li>
-  <li class="fragment">All F0 females are <font color="red">red</font></li>
-  <li class="fragment">All F1 individuals are <font color="pink">pink</font></li>
-  <li class="fragment">F2 contains <font color="red">1300</font>, <font color="pink">3000</font>, <font color="white">1500</font></li>
-  </ul>
-</ul>
+* &shy;<!-- .element: class="fragment" -->Suppose we have flowers where alleles determine colour <font color="red">AA</font>, <font color="pink">Aa</font>, <font color="white">aa</font>.
+  * &shy;<!-- .element: class="fragment" -->This trait has Mendelian inheritance
+  * &shy;<!-- .element: class="fragment" -->All F0 males are <font color="white">white</font>
+  * &shy;<!-- .element: class="fragment" -->All F0 females are <font color="red">red</font>
+  * &shy;<!-- .element: class="fragment" -->All F1 individuals are <font color="pink">pink</font>
+  * &shy;<!-- .element: class="fragment" -->F2 contains <font color="red">1300</font>, <font color="pink">3000</font>, <font color="white">1500</font>
 
 Are F2 individuals' proportions according to the expectation of 1:2:1 ? <!-- .element: class="fragment" -->
 
@@ -211,9 +198,9 @@ p.adjust(p_vals, method="fdr")
 
 * When the sample size is small, the Chi² test can be inaccurate
 * In these cases an exact test should be employed <!-- .element: class="fragment" data-fragment-index="1" -->
-	* Can be used with small samples <!-- .element: class="fragment" data-fragment-index="2" -->
-	* Is computationally intensive <!-- .element: class="fragment" data-fragment-index="3" -->
-	* Also called a "binomial" or "multinomial" test <!-- .element: class="fragment" data-fragment-index="4" -->
+  * Can be used with small samples <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Is computationally intensive <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Also called a "binomial" or "multinomial" test <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ![Binomial dist](C06_assets/binomial_plot.png) <!-- .element: class="fragment" data-fragment-index="5" -->
 
@@ -246,7 +233,6 @@ if(!require("XNomial")){
 	chisq.test(x=obs, p=exp)
 
 	xmulti(obs=obs, expr=exp)
-
 ```
 
 ---
@@ -261,14 +247,10 @@ if(!require("XNomial")){
 
 ### When can they be performed?
 
-<ul>
-<li class="fragment" data-fragment-index="1">When the data consists of:</li>
-  <ul>
-  <li class="fragment" data-fragment-index="2">Categorical variables</li>
-  <li class="fragment" data-fragment-index="2">Counts data</li>
-  <li class="fragment" data-fragment-index="2">Contingency tables</li>
-  </ul>
-</ul>
+* &shy;<!-- .element:  class="fragment" data-fragment-index="1"-->When the data consists of:
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"-->Categorical variables
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"-->Counts data
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"-->Contingency tables
 
 ---
 
@@ -284,14 +266,10 @@ if(!require("XNomial")){
 
 ### What are they?
 
-<ul>
-<li class="fragment" data-fragment-index="1">There are several ways to perform independence tests:</li>
-  <ul>
-  <li class="fragment" data-fragment-index="2"><span class="fragment highlight-green" data-fragment-index="3">Chi² test of independence</span></li>
-  <li class="fragment" data-fragment-index="2"><span class="fragment fade-out" data-fragment-index="3">G-test of independence</span></li>
-  <li class="fragment" data-fragment-index="2"><span class="fragment highlight-green" data-fragment-index="3">Fisher's exact test</span></li>
-  </ul>
-</ul>
+* &shy;<!-- .element:  class="fragment" data-fragment-index="1"-->There are several ways to perform independence tests:
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"--><span class="fragment highlight-green" data-fragment-index="3">Chi² test of independence</span>
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"--><span class="fragment fade-out" data-fragment-index="3">G-test of independence</span>
+  * &shy;<!-- .element:  class="fragment" data-fragment-index="2"--><span class="fragment highlight-green" data-fragment-index="3">Fisher's exact test</span>
 
 ---
 
@@ -309,11 +287,11 @@ if(!require("XNomial")){
 ### Chi² test of independence example
 
 * Suppose the following situation:
-	* A new drug for migraines is being tested
-	* It has some (uncommon) side effects <!-- .element: class="fragment" data-fragment-index="1" -->
-	* We want to know if the side effects occur more often when the drug is taken at night or in the morning <!-- .element: class="fragment" data-fragment-index="2" -->
-	* Of the 4682 cases where the drug was taken at night, 30 reported side effects <!-- .element: class="fragment" data-fragment-index="3" -->
-	* Of the 8813 cases where it was taken in the morning, 76 reported side effects <!-- .element: class="fragment" data-fragment-index="4" -->
+  * A new drug for migraines is being tested
+  * It has some (uncommon) side effects <!-- .element: class="fragment" data-fragment-index="1" -->
+  * We want to know if the side effects occur more often when the drug is taken at night or in the morning <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Of the 4682 cases where the drug was taken at night, 30 reported side effects <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Of the 8813 cases where it was taken in the morning, 76 reported side effects <!-- .element: class="fragment" data-fragment-index="4" -->
 
 |||
 
@@ -345,27 +323,27 @@ chisq.test(side_effects_matrix,
 
 ### The Null hypothesis
 
-"The variables' relative porportions are independent" <!-- .element: class="fragment" data-fragment-index="1" -->
+"The variables' relative proportions are independent" <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
 ### What about 'small' samples?
 
 * When the sample size is small, the Chi² test can be inaccurate
-* In these cases an exact test should be employed <!-- .element: class="fragment" data-fragment-index="1" -->
-	* Can be used with small samples <!-- .element: class="fragment" data-fragment-index="2" -->
-	* Is computationally intensive <!-- .element: class="fragment" data-fragment-index="3" -->
-	* Fischer's exact test of independence <!-- .element: class="fragment" data-fragment-index="4" -->
+* In these cases an exact test should be employed<!-- .element: class="fragment" data-fragment-index="1" -->
+  * Can be used with small samples<!-- .element: class="fragment" data-fragment-index="2" -->
+  * Is computationally intensive<!-- .element: class="fragment" data-fragment-index="3" -->
+  * Fischer's exact test of independence<!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
 ### Fisher's exact test
 
 * Consider the following situation:
-	* Plants in a garden are watered in different intervals
-	* Daily, Weekly, Monthly and Quarterly <!-- .element: class="fragment" data-fragment-index="1" -->
-	* After a year, the plants' survival rate is measured <!-- .element: class="fragment" data-fragment-index="2" -->
-	* Does the watering frequency make a difference for these plants?  <!-- .element: class="fragment" data-fragment-index="3" -->
+  * Plants in a garden are watered in different intervals
+  * Daily, Weekly, Monthly and Quarterly <!-- .element: class="fragment" data-fragment-index="1" -->
+  * After a year, the plants' survival rate is measured <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Does the watering frequency make a difference for these plants?  <!-- .element: class="fragment" data-fragment-index="3" -->
 
 <table>
 <tr><td>Frequency</td><td>Dead</td><td>Alive</td></tr>
