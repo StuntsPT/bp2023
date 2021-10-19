@@ -2,11 +2,11 @@
 
 ##### Bioinformática Prática 2021
 
-<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+![Logo FCUL](C01_assets/logo-FCUL.png)
 
-<center>Francisco Pina Martins</center>
+Francisco Pina Martins
 
-<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+[@FPinaMartins](https://twitter.com/FPinaMartins)
 
 ---
 
@@ -72,16 +72,16 @@
 
 ### Dependent & independent variables
 
-<ul>
-<li class="fragment">Independent variables</li>
-<ul>
-<li class="fragment">May cause change in dependent variables</li>
-</ul>
-<li class="fragment">Dependent variables</li>
-<ul>
-<li class="fragment">Is affected by changes in another variable</li>
-</ul>
-</ul>
+
+* &shy;<!-- .element: class="fragment" -->Independent variables
+
+* &shy;<!-- .element: class="fragment" -->May cause change in dependent variables
+
+* &shy;<!-- .element: class="fragment" -->Dependent variables
+
+* &shy;<!-- .element: class="fragment" -->Is affected by changes in another variable
+
+
 
 |||
 
@@ -176,14 +176,12 @@
 
 ### Dispersal
 
-<ul>
-<li class="fragment">Range - Diff. between Max. and Min.</li>
-<li class="fragment">Variance - [Expectation of the squared deviation of a random variable from its mean](https://www.mathsisfun.com/data/standard-deviation-formulas.html)</li>
-<li class="fragment">Standard deviation (σ) - [Square root of variance](https://www.mathsisfun.com/data/standard-deviation-formulas.html)</li>
-<li class="fragment">Coefficient of variation - Ratio of Std. Dev. to the mean</li>
-<li class="fragment">Standard error - Std. Dev. of the sampling distribution</li>
-<li class="fragment">[Confidence interval](https://www.dummies.com/education/science/biology/confidence-interval-basics/)</li>
-</ul>
+* &shy;<!-- .element: class="fragment" -->Range - Diff. between Max. and Min.
+* &shy;<!-- .element: class="fragment" -->Variance - [Expectation of the squared deviation of a random variable from its mean](https://www.mathsisfun.com/data/standard-deviation-formulas.html)
+* &shy;<!-- .element: class="fragment" -->Standard deviation (σ) - [Square root of variance](https://www.mathsisfun.com/data/standard-deviation-formulas.html)
+* &shy;<!-- .element: class="fragment" -->Coefficient of variation - Ratio of Std. Dev. to the mean
+* &shy;<!-- .element: class="fragment" -->Standard error - Std. Dev. of the sampling distribution
+* &shy;<!-- .element: class="fragment" -->[Confidence interval](https://www.dummies.com/education/science/biology/confidence-interval-basics/)
 
 |||
 
@@ -216,15 +214,11 @@
 
 ### Other descriptors
 
-<img src="C03_assets/quantiles.png" style="background:none; border:none; box-shadow:none;">
+![Quantiles](C03_assets/quantiles.png)
 
-<ul>
-<li class="fragment">*q*-Quantiles - Divide the data into *q* subsets of equal size</li>
-<ul>
-<li class="fragment">Quartiles - Divide the data in 4 equal parts</li>
-<li class="fragment">Percentiles - Divide the data into 100 equal parts</li>
-</ul>
-</ul>
+* &shy;<!-- .element: class="fragment" -->*q*-Quantiles - Divide the data into *q* subsets of equal size
+  * &shy;<!-- .element: class="fragment" -->Quartiles - Divide the data in 4 equal parts
+  * &shy;<!-- .element: class="fragment" -->Percentiles - Divide the data into 100 equal parts
 
 ---
 
