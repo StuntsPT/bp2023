@@ -2,11 +2,11 @@
 
 #### Bioinformática Prática 2021
 
-<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+![Logo FCUL](C01_assets/logo-FCUL.png)
 
-<center>Francisco Pina Martins</center>
+Francisco Pina Martins
 
-<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+[@FPinaMartins](https://twitter.com/FPinaMartins)
 
 ---
 
@@ -31,7 +31,7 @@
 	* Sampled <!-- .element: class="fragment" data-fragment-index="4" -->
 	* Modeled <!-- .element: class="fragment" data-fragment-index="5" -->
 
-<font color="red">The comparison is considered **significant** if the relationship between the tested datasets is unlikely to be a chance realization of H<sub>0</sub> according to a **pre-determined** threshold.</font> <!-- .element: class="fragment" data-fragment-index="6" -->
+<font color="red">The comparison is considered **significant** if the relationship between tested datasets is unlikely to be a chance realization of H<sub>0</sub> according to a **pre-determined** threshold.</font> <!-- .element: class="fragment" data-fragment-index="6" -->
 
 ---
 
@@ -113,22 +113,21 @@ legend("topright", inset=.05, title="Distributions",
 
 ### Single sample test
 
-* Single sample tests are used to compare a sample against a single value:
-	* "Is this sample significantly different from a specific value?" <!-- .element: class="fragment" data-fragment-index="1" -->
-<center>![Single sample test](C05_assets/Single_sample.png)</center> <!-- .element: class="fragment" data-fragment-index="2" -->
+* Used to compare a **sample** to a **single value**:
+  * "Is this sample's mean value significantly different from a specific value?" <!-- .element: class="fragment" data-fragment-index="1" -->
+
+![Single sample test](C05_assets/Single_sample.png)<!-- .element: class="fragment" data-fragment-index="2" -->
 
 ---
 
 ### Single sample *t-test* example
 
-Is the pH value of water samples significantly different from "neutral" (pH=7)?
-
-What about the "reference value for rivers" (pH=7.7)? <!-- .element: class="fragment" data-fragment-index="1" -->
-
-Let's consider: <!-- .element: class="fragment" data-fragment-index="2" -->
-* Data from "Dados_diatoms_heavymetals.csv" <!-- .element: class="fragment" data-fragment-index="3" -->
-* Two tailed test <!-- .element: class="fragment" data-fragment-index="4" -->
-* Alpha=0.05 <!-- .element: class="fragment" data-fragment-index="5" -->
+* Is the pH value of water samples significantly different from "neutral" (pH=7)?
+* &shy;<!-- .element: class="fragment" data-fragment-index="1" -->What about the "reference value for rivers" (pH=7.7)?
+* &shy;<!-- .element: class="fragment" data-fragment-index="2" -->Consider:
+  * &shy;<!-- .element: class="fragment" data-fragment-index="3" -->Data from `Dados_diatoms_heavymetals.csv`
+  * &shy;<!-- .element: class="fragment" data-fragment-index="4" -->Two tailed test
+  * &shy;<!-- .element: class="fragment" data-fragment-index="5" -->Alpha = 0.05
 
 |||
 
@@ -154,6 +153,8 @@ Is it above the reference value for rivers (10 μg/L)? <!-- .element: class="fra
 
 |||
 
+### N-P equivalent - Wilcoxon test
+
 ```R
 diatoms = read.csv("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv")
 zn = diatoms[,"Zn"]
@@ -168,8 +169,8 @@ wilcox.test(zn, mu=10, alternative="greater")
 
 ### 2 samples tests
 
-* 2 samples tests are used to compare the values of two samples.
-	* "Are the values of these two samples significantly different from each other?" <!-- .element: class="fragment" data-fragment-index="1" -->
+* Used to compare the values of two samples
+  * "Are the mean values of these two samples significantly different from each other?" <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ![Two indep. samples](C05_assets/Two_indep_samples.png) <!-- .element: class="fragment" data-fragment-index="2" -->
 
@@ -180,13 +181,13 @@ wilcox.test(zn, mu=10, alternative="greater")
 Is the "Dissolved oxygen" different between Northern and Southern rivers?
 
 * Northern rivers: <!-- .element: class="fragment" data-fragment-index="1" -->
-	* "Eagle River" <!-- .element: class="fragment" data-fragment-index="1" -->
-	* "Blue River" <!-- .element: class="fragment" data-fragment-index="1" -->
-	* "Snake River" <!-- .element: class="fragment" data-fragment-index="1" -->
+  * "Eagle River" <!-- .element: class="fragment" data-fragment-index="1" -->
+  * "Blue River" <!-- .element: class="fragment" data-fragment-index="1" -->
+  * "Snake River" <!-- .element: class="fragment" data-fragment-index="1" -->
 * Southern rivers: <!-- .element: class="fragment" data-fragment-index="2" -->
-	* "Arkansas River" <!-- .element: class="fragment" data-fragment-index="2" -->
-	* "Chalk Creek" <!-- .element: class="fragment" data-fragment-index="2" -->
-	* "South Platte River" <!-- .element: class="fragment" data-fragment-index="2" -->
+  * "Arkansas River" <!-- .element: class="fragment" data-fragment-index="2" -->
+  * "Chalk Creek" <!-- .element: class="fragment" data-fragment-index="2" -->
+  * "South Platte River" <!-- .element: class="fragment" data-fragment-index="2" -->
 
 |||
 
@@ -228,13 +229,11 @@ wilcox.test(x=north_rivers_alk, y=south_rivers_alk, conf.level=0.95)
 
 ### Dependent samples
 
-If the samples are not independent
- the "normal" tests cannot be used.
+If samples are not independent, a special variant must be used
 
-* Dependent samples are measurements taken from linked data: <!-- .element: class="fragment" data-fragment-index="1" -->
-	* Blood sugar levels in patients
- before and after eating <!-- .element: class="fragment" data-fragment-index="2" -->
-	* Size of the left and right pectoral fins of fish <!-- .element: class="fragment" data-fragment-index="3" -->
+* Dependent samples are measurements taken from linked data:<!-- .element: class="fragment" data-fragment-index="1" -->
+  * Blood sugar levels in patients before and after eating<!-- .element: class="fragment" data-fragment-index="2" -->
+  * Size of fishes' left and right pectoral fins<!-- .element: class="fragment" data-fragment-index="3" -->
 
 ![Dependent samples](C05_assets/Dependent_samples.png) <!-- .element: class="fragment" data-fragment-index="4" -->
 
@@ -270,7 +269,6 @@ shapiro.test(ph)
 shapiro.test(ph2017)
 
 wilcox.test(x=ph, y=ph2017, paired=TRUE, conf.level=0.95)
-
 ```
 
 ---
@@ -332,12 +330,12 @@ wilcox.test(x=ph, y=ph2017, paired=TRUE, conf.level=0.95)
 
 ### Correcting for multiple tests
 
-* Bonferroni correction <!-- .element: class="fragment" data-fragment-index="1" -->
-	* As simple as α/number of tests <!-- .element: class="fragment" data-fragment-index="1" -->
-	* Deemed too conservative <!-- .element: class="fragment" data-fragment-index="1" -->
-* FDR test <!-- .element: class="fragment" data-fragment-index="2" -->
-	* Adjusts the p-value into a q-value <!-- .element: class="fragment" data-fragment-index="2" -->
-	* Has more power at the cost of more false positives <!-- .element: class="fragment" data-fragment-index="2" -->
+* Bonferroni correction<!-- .element: class="fragment" data-fragment-index="1" -->
+  * As simple as α/number of tests<!-- .element: class="fragment" data-fragment-index="1" -->
+  * Deemed too conservative<!-- .element: class="fragment" data-fragment-index="1" -->
+* FDR test<!-- .element: class="fragment" data-fragment-index="2" -->
+  * Adjusts *p*-values into *q*-values<!-- .element: class="fragment" data-fragment-index="2" -->
+  * Has more power at the cost of more false positives<!-- .element: class="fragment" data-fragment-index="2" -->
 
 |||
 
