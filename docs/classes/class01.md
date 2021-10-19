@@ -16,7 +16,7 @@ Francisco Pina Martins
 
 * 25-10-2021 – Apresentação; organização e tratamento de dados
 * 26-10-2021 – Introdução ao R
-* 27-10-2021 – **Dia de Ciências**
+* 27-10-2021 *Dia de Ciências* – Revisão de conceitos estatísticos (14-16h) - Seminário
 * 28-10-2021 – Gráficos em R
 * 29-10-2021 – Testes de hipóteses I
 
