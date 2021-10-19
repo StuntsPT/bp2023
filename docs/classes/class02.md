@@ -2,27 +2,27 @@
 
 #### Bioinformática Prática 2021
 
-<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+![FCUL Logo](C01_assets/logo-FCUL.png)
 
-<center>Francisco Pina Martins</center>
+Francisco Pina Martins
 
-<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+[@FPinaMartins](https://twitter.com/FPinaMartins)
 
 ---
 
-<img src="C02_assets/R_logo.png" style="background:none; border:none; box-shadow:none;">
+![GUN R Logo](C02_assets/R_logo.png)
 
 [GNU R](https://www.r-project.org/)
 
 ---
 
-## Meet R
+### Meet R
 
-<img src="C02_assets/R-console.gif" style="background:none; border:none; box-shadow:none;">
+![R Console](C02_assets/R-console.gif)
 
 ---
 
-## RStudio - an R IDE
+### RStudio - an R IDE
 
 ![RStudio_image](C02_assets/rstudio.png)
 
@@ -33,33 +33,36 @@
 
 ---
 
-## How do I use this thing?
+### How do I use this thing?
 
 Calculator
 
-<pre class="fragment"><code>4 + 4
+```R
+4 + 4
 [1] 8
 
 (2 + 5) * 6 / (6 - 2)
 [1] 10.5
-</code></pre>
+```
 
 |||
 
 
-## How do I use this thing?
+### How do I use this thing?
 
 Text processor
 
-<pre class="fragment"><code>print("Good Morning World!")
+```R
+print("Good Morning World!")
 [1] "Good Morning World!"
-</code></pre>
 
-<img class="fragment" src="C02_assets/BS_good_morning.gif" style="background:none; border:none; box-shadow:none;">
+```
+
+![Good Morinig World!](C02_assets/BS_good_morning.gif)
 
 |||
 
-## How do I use this thing?
+### How do I use this thing?
 
 ```R
 2 < 3  # Logical operators
@@ -79,9 +82,9 @@ Text processor
 
 ---
 
-## R programming 101
+### R programming 101
 
-### Variables
+#### Variables
 
 ```R
 txt = "Good Morning World!"
@@ -91,7 +94,7 @@ print(txt)
 
 ---
 
-## Basic variable types
+### Basic variable types
 
 * Numeric (1.5) - AKA "Float" <!-- .element: class="fragment" data-fragment-index="1" -->
 * Integer (1) - these have to be coerced <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -101,9 +104,9 @@ print(txt)
 
 |||
 
-## Basic variable types
+### Basic variable types
 
-```
+```R
 number = 1.5
 class(number)
 ```
@@ -112,11 +115,13 @@ class(number)
 
 ---
 
-## Advanced variable types
+### Advanced variable types
 
-### Vector
+#### Vector
 
 A **vector** is a **sequence** of data elements **of the same basic type**. Members in a vector are called "components". It is defined using `c()`:
+
+<div class="fragment">
 
 ```R
 c(1,2,1)
@@ -126,11 +131,15 @@ c("AA", "Aa", "aa")
 c(TRUE, FALSE, TRUE)
 ```
 
+</div>
+
 |||
 
-## Vector
+#### Vector
 
 We can perform a lot of operations on vectors:
+
+<div class="fragment">
 
 ```R
 a = c(1, 3, 5, 7)
@@ -142,25 +151,32 @@ a + d  # Recycling rule!
 a[2]  # Indexing
 ```
 
+</div>
+
 ---
 
-## Advanced variable types
+### Advanced variable types
 
-### Factor
+#### Factor
 
 Factors are used for storing **categorical variables**.
 
-<img src="C02_assets/pokeball.png" style="background:none; border:none; box-shadow:none;">
+![Pokéball](C02_assets/pokeball.png)
 
-<pre class="fragment"><code>captured_pokemon = c("normal", "normal", "electric", "fire", "fire", "fire", "water", "grass")
+<div class="fragment">
+
+```R
+captured_pokemon = c("normal", "normal", "electric", "fire", "fire", "fire", "water", "grass")
 captured_pokemon_types = levels(as.factor(captured_pokemon))
-</pre></code>
+```
+
+</div>
 
 ---
 
-## Advanced variable types
+### Advanced variable types
 
-### Matrix
+#### Matrix
 
 A **matrix** is a collection of **data elements** arranged in a **two-dimensional rectangular layout**. It is defined using a `function`.
 
@@ -177,9 +193,9 @@ M[,1]  # Get a single column
 
 ---
 
-## Advanced variable types
+### Advanced variable types
 
-### List
+#### List
 
 A list is a generic vector containing other objects
 
@@ -192,9 +208,9 @@ x = list(n, s, b, 3)  # x contains copies of n, s, b
 
 ---
 
-## Advanced variable types
+### Advanced variable types
 
-### Data Frame
+#### Data Frame
 
 A **data frame** is used for storing data tables. It is a set of vectors of equal length.
 
@@ -207,9 +223,9 @@ dframe = data.frame(n, s, b)  # dframe is a data frame
 
 |||
 
-## Advanced variable types
+### Advanced variable types
 
-### Data Frame
+#### Data Frame
 
 ```R
 mtcars  # Built in data! 
@@ -233,25 +249,25 @@ mtcars[mtcars$cyl == 6,]  # Can you guess what this does?
 
 ---
 
-## Functions
+### Functions
 
 R functions are invoked by its **name**, then followed by the parenthesis, and zero or more arguments.
 
 ```R
-c(1, 2, 3)
+c(1, 2, 3)  # `c` actually stands for "combine"
 
-sum(1, 2)
+sum(1, 2)  # A sum function
 
-head(mtcars)
+head(mtcars)  # Show the first few lines of...
 
-seq(10, 30)
+seq(10, 30)  # Create a sequence (start, end, [step])
 ```
 
 * We can also define our own functions. More on that later. <!-- .element: class="fragment" data-fragment-index="1" -->
 
 |||
 
-## Functions
+### Functions
 
 ```R
 # See also
@@ -267,7 +283,7 @@ table()
 
 ---
 
-## Variable coercion
+### Variable coercion
 
 * There are functions than can be used to transform variables:
 
@@ -285,10 +301,14 @@ as.character(NUMERIC)
 
 ---
 
-## Getting help
+### Getting help
 
-"When in doubt, ask."
-You can ask R for help with the command `?function`. Or if you need help on a **topic** rather than a function, use the `??` notation ("fuzzy search").
+* "When in doubt, ask."
+  * &shy;<!-- .element: class="fragment"-->Ask R for help with the command `?function`
+  * &shy;<!-- .element: class="fragment"-->If you need help on a **topic**, use the `??` notation ("fuzzy search")
+
+
+<div class="fragment">
 
 ```R
 ?head
@@ -296,32 +316,34 @@ You can ask R for help with the command `?function`. Or if you need help on a **
 ??multivariate
 ```
 
+</div>
+
 ---
 
-## Installing external packages
+### Installing external packages
 
-<ul>
-<li class="fragment">
-One of R's greatest strengths is how many 3rd party packages are developed for it
-</li>
-<li class="fragment">
-Installing these external packages is as easy as typing `install.packages(pkg_name)`
-</li>
-<li class="fragment">
-We then have to load the packages we need in order to use them
-</li>
-</ul>
-<pre class="fragment">
-<code>install.packages("psych")
+* &shy;<!-- .element: class="fragment"-->One of R's greatest strengths is how many 3rd party packages are developed for it
+  * &shy;<!-- .element: class="fragment"-->Installing these external packages is as easy as typing `install.packages(pkg_name)`
+  * &shy;<!-- .element: class="fragment"-->We then have to load the packages we need in order to use them
+
+
+<div class="fragment">
+
+```R
+install.packages("psych")
 
 library("psych")
-</code></pre>
+```
+
+</div>
 
 ---
 
-## Missing data
+### Missing data
 
 Missing data is coded in R as `NA`, which stands for "**N**ot **A**vailable"
+
+<div class="fragment">
 
 ```R
 v = c(1, 2, NA, 4)
@@ -332,11 +354,17 @@ mean(v)
 mean(v, na.rm=TRUE)
 ```
 
+</div>
+
 ---
 
-## Loading data from external sources
+### Loading data from external sources
 
-You don't have to type data into R manually. You can load data directly from files. You can use `read.csv()` or `read.table()`.
+* &shy;<!-- .element: class="fragment"-->You don't have to type data into R manually
+  * &shy;<!-- .element: class="fragment"-->You can load data directly from files
+  * &shy;<!-- .element: class="fragment"-->Use `read.csv()` or `read.table()`
+
+<div class="fragment">
 
 ```R
 data = read.csv("/path/to/file.csv")
@@ -345,6 +373,8 @@ data = read.table("/path/to/file.txt", header=FALSE, sep="\t")
 
 data = read.table("https://some.site.with.data.com/datafile.txt", header=TRUE, sep=";", dec=",")
 ```
+
+</div>
 
 ---
 
