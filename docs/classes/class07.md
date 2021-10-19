@@ -2,11 +2,11 @@
 
 #### Bioinformática Prática 2021
 
-<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+![FCUL Logo](C01_assets/logo-FCUL.png)
 
-<center>Francisco Pina Martins</center>
+Francisco Pina Martins
 
-<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+[@FPinaMartins](https://twitter.com/FPinaMartins)
 
 ---
 
@@ -65,7 +65,7 @@ Euclidian distances!
 ![Euclidian_dist](C07_assets/euclidian.png) 
 
 ```R
-euclidean_distance = function(p,q){
+euclidean_distance = function(p, q){
 
     result = sqrt(sum((p - q)^2))
 
@@ -79,8 +79,8 @@ euclidean_distance = function(p,q){
 
 ```R
 set.seed(123)
-scater_data = data.frame(x=sample(1:10000,7), 
-                         y=sample(1:10000,7))
+scater_data = data.frame(x=sample(1:10000, 7), 
+                         y=sample(1:10000, 7))
 
 plot(x=scater_data$x, y=scater_data$y, col=1:7, pch=19)
 
@@ -98,6 +98,7 @@ legend("topleft",
 euclidean_distance(scater_data[1,], scater_data[2,])
 
 triang = dist(scater_data)
+# dist() can use the following methods: "euclidean" (default), "maximum", "manhattan", "canberra", "binary" or "minkowski"
 
 plot(hclust(triang, method="complete"))
 ```
@@ -107,7 +108,7 @@ plot(hclust(triang, method="complete"))
 ### A worked example
 
 * Suppose we have some students and their respective grades
-* We need to quickly view who has good and poor grades <!-- .element: class="fragment" data-fragment-index="1" -->
+* We need to quickly view if they can be clustered by grades <!-- .element: class="fragment" data-fragment-index="1" -->
 
 |||
 
@@ -117,23 +118,23 @@ Let's try to group some students
 
 ```R
 students = ("
-Name Maths English
-Bart_Simpson 4 3
-Lisa_Simpson 19 18
-Tom_Sawyer 5 7
-Hucklebery_Finn 5 2
-Hermione_Granger 20 20
-Harry_Potter 15 16
-Samwell_Tarly 19 20
-Alladin 14 13
-Peter_Quill 8 11
-Leia_Organa 18 18
-Luke_Skywalker 14 16
+Name Maths English PE Science
+Bart_Simpson 4 3 2 4
+Lisa_Simpson 19 18 13 18
+Tom_Sawyer 5 7 16 3
+Huckleberry_Finn 5 2 17 1
+Hermione_Granger 20 20 11 17
+Harry_Potter 12 13 13 10
+Samwell_Tarly 19 20 8 20
+Alladin 10 10 20 2
+Peter_Quill 8 6 17 3
+Leia_Organa 18 18 15 19
+Luke_Skywalker 13 12 18 16
 ")
 
 student_matrix = as.matrix(read.table(textConnection(students),
                            header=TRUE,
-			   row.names=1))
+                           row.names=1))
 plot(hclust(dist(student_matrix),method="average"))
 
 ```
@@ -282,15 +283,11 @@ legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
 
 ### When "vanilla" R just isn't enough
 
-<ul>
-<li class="fragment">One of the good things about R is it's expandability</li>
-<li class="fragment">It is possible to "import" thousands of external 3rd party packages</li>
-<li class="fragment">Bioconductor is more than just a package. It's a 3rd party package repository</li>
-  <ul>
-  <li class="fragment">It hosts ~~1473~~ ~~1649~~ ~~1823~~ 1974 bioinformatics related packages (at the time of writing)</li>
-  <li class="fragment">It is very easy to use directly from R</li>
-  </ul>
-</ul>
+* &shy;<!-- .element: class="fragment" -->One of the good things about R is it's expandability
+* &shy;<!-- .element: class="fragment" -->It is possible to "import" thousands of external 3rd party packages
+* &shy;<!-- .element: class="fragment" -->Bioconductor is more than just a package. It's a 3rd party package repository
+  * &shy;<!-- .element: class="fragment" -->It hosts ~~1473~~ ~~1649~~ ~~1823~~ ~~1974~~ 2042 bioinformatics related packages (at the time of writing)
+  * &shy;<!-- .element: class="fragment" -->It is very easy to use directly from R
 
 ---
 
