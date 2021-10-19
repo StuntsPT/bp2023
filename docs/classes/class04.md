@@ -2,11 +2,11 @@
 
 ##### Bioinformática Prática 2021
 
-<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+![FCUL Logo](C01_assets/logo-FCUL.png)
 
-<center>Francisco Pina Martins</center>
+Francisco Pina Martins
 
-<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+[@FPinaMartins](https://twitter.com/FPinaMartins)
 
 ---
 
@@ -16,31 +16,25 @@
 
 ### How does it work?
 
-<ul>
-<li class="fragment">Plotting in R uses a function called `plot()`</li>
-  <ul>
-  <li class="fragment">There are others, but let's start simple</li>
-  </ul>
-<li class="fragment">The plot proprieties can either be provided at call time, or added *a posteriori*</li>
-<li class="fragment">It is not as confusing as it sounds</li>
-</ul>
+* &shy;<!-- .element: class="fragment" -->Plotting in R uses a function called `plot()`
+  * &shy;<!-- .element: class="fragment" -->There are others, but let's start simple
+* &shy;<!-- .element: class="fragment" -->The plot proprieties can either be provided at call time, or added *a posteriori*
+* &shy;<!-- .element: class="fragment" -->It is not as confusing as it sounds
 
 ---
 
 ### Rules of engagement
 
-<ul>
-<li class="fragment">Lines with a `#` in the line below are either new, or changed</li>
-  <ul>
-  <li class="fragment">Pay special attention to them</li>
-  </ul>
-<li class="fragment">You should clear all plots between each slide</li>
-  <ul>
-  <li class="fragment">Use the broom icon <img src="C04_assets/broom.png" style="background:none; border:none; box-shadow:none;"> above the **plots** pane for that</li>
-  </ul>
-</ul>
+* &shy;<!-- .element: class="fragment" -->Lines with a `#` in the line below are either new, or changed
+  * &shy;<!-- .element: class="fragment" -->Pay special attention to them
+* &shy;<!-- .element: class="fragment" -->You should clear all plots between each slide
+  * &shy;<!-- .element: class="fragment" -->Use the broom icon <img src="C04_assets/broom.png" style="background:none; border:none; box-shadow:none;"> above the **plots** pane for that
+  
+</br>
+</br>
+</br>
 
-<p class="fragment">Ready?</p>
+&shy;<!-- .element: class="fragment" -->Ready?
 
 ---
 
@@ -277,17 +271,13 @@ dev.off()
 
 ### Summary
 
-<ul>
- <li class⁼"fragment">`plot()` will start a new plot in R</li>
- <li class="fragment">We can keep changing it until we "close" it</li>
- <ul>
-  <li class="fragment">`lines()` will allow us to plot additional lines</li>
-  <li class="fragment">`title()` allows for changing the title, subtitle and add axis lables</li>
-  <li class="fragment">`axis()` allows for axes manipulations</li>
-  <li class="fragment">`legend()` adds a legend to the plot</li>
- </ul>
- <li class="fragment">`dev_off()` will end it</li>
-</ul>
+* &shy;<!-- .element: class="fragment" -->`plot()` will start a new plot in R
+* &shy;<!-- .element: class="fragment" -->We can keep changing it until we "close" it
+  * &shy;<!-- .element: class="fragment" -->`lines()` will allow us to plot additional lines
+  * &shy;<!-- .element: class="fragment" -->`title()` allows for changing the title, subtitle and add axis lables
+  * &shy;<!-- .element: class="fragment" -->`axis()` allows for axes manipulations
+  * &shy;<!-- .element: class="fragment" -->`legend()` adds a legend to the plot
+* &shy;<!-- .element: class="fragment" -->`dev_off()` will end it
 
 ---
 
@@ -299,11 +289,9 @@ dev.off()
 
 ### Bar plots
 
-<ul>
-<li class="fragment">Bar plots are great for frequency data</li>
-<li class="fragment">They combine really well with data from the `table()` function</li>
-<li class="fragment">Let's look at the `barplot()` function!</li>
-</ul>
+* &shy;<!-- .element: class="fragment" -->Bar plots are great for frequency data
+* &shy;<!-- .element: class="fragment" -->They combine really well with data from the `table()` function
+* &shy;<!-- .element: class="fragment" -->Let's look at the `barplot()` function!
 
 |||
 
@@ -398,30 +386,22 @@ legend(6, 30, names(classes_data), cex=0.8, fill=heat.colors(3))
 
 ### Summary
 
-<ul>
- <li class⁼"fragment">`barplot()` will draw a barplot</li>
- <li class="fragment">This function works in a similar fashion to `plot()`</li>
- <li class="fragment">It is very versatile, when combined with the `t()` function</li>
-</ul>
+* &shy;<!-- .element: class="fragment" -->`barplot()` will draw a barplot
+* &shy;<!-- .element: class="fragment" -->This function works in a similar fashion to `plot()`
+* &shy;<!-- .element: class="fragment" -->It is very versatile, when combined with the `t()` function
 
 ---
 
 ### What about that `par` thing?
 
-<ul>
- <li class⁼"fragment">`par()` contains the plotting parameters</li>
- <ul>
-  <li class="fragment">It works like any other R object</li>
- </ul>
- <li class="fragment">Contains a lot of parameters, some of the most frequent are:</li>
- <ul>
-  <li class="fragment">`mar()` - set internal margins</li>
-  <li class="fragment">`oma()` - set external margins</li>
-  <li class="fragment">`mgp()` - set axes distances</li>
-  <li class="fragment">`mfrow()` - set number of rows</li>
-  <li class="fragment">`mfcol()` - set number of columns</li>
- </ul>
-</ul>
+* &shy;<!-- .element: class="fragment" -->`par()` contains the plotting parameters
+  * &shy;<!-- .element: class="fragment" -->It works like any other R object
+* &shy;<!-- .element: class="fragment" -->Contains a lot of parameters, some of the most frequent are:
+  * &shy;<!-- .element: class="fragment" -->`mar()` - set internal margins
+  * &shy;<!-- .element: class="fragment" -->`oma()` - set external margins
+  * &shy;<!-- .element: class="fragment" -->`mgp()` - set axes distances
+  * &shy;<!-- .element: class="fragment" -->`mfrow()` - set number of rows
+  * &shy;<!-- .element: class="fragment" -->`mfcol()` - set number of columns
 
 |||
 
@@ -451,13 +431,9 @@ barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
 
 ### Pie charts
 
-<ul>
- <li class⁼"fragment">`pie()` will plot a pie chart</li>
- <li class="fragment">It's parameters are similar to those of other plots</li>
- <ul>
-  <li class="fragment">But are usually a lot less flexible</li>
- </ul>
-</ul>
+* &shy;<!-- .element: class="fragment" -->`pie()` will plot a pie chart
+* &shy;<!-- .element: class="fragment" -->It's parameters are similar to those of other plots
+  * &shy;<!-- .element: class="fragment" -->But are usually a lot less flexible
 
 |||
 
@@ -469,14 +445,10 @@ barplot(as.matrix(classes_data), main="Institute", ylab= "Total Students",
 
 ### Histograms
 
-<ul>
- <li class⁼"fragment">`hist()` will plot an histogram</li>
- <li class="fragment">Are great for representing data distributions</li>
- <li class="fragment">R will bin the data for you</li>
- <ul>
-  <li class="fragment">But of course, you can control that too</li>
- </ul>
-</ul>
+* &shy;<!-- .element: class="fragment" -->`hist()` will plot an histogram
+* &shy;<!-- .element: class="fragment" -->Are great for representing data distributions
+* &shy;<!-- .element: class="fragment" -->R will bin the data for you
+  * &shy;<!-- .element: class="fragment" -->But of course, you can control that too
 
 |||
 
@@ -551,11 +523,9 @@ hist(all_classes, col=heat.colors(length(brk)), breaks=brk,
 
 ### Summary
 
-<ul>
- <li class⁼"fragment">Histograms are very much like other plots</li>
- <li class="fragment">The main difference is in binning</li>
- <li class="fragment">There are many more options</li>
-</ul>
+* &shy;<!-- .element: class="fragment" -->Histograms are very much like other plots
+* &shy;<!-- .element: class="fragment" -->The main difference is in binning
+* &shy;<!-- .element: class="fragment" -->There are many more options
 
 ---
 
@@ -567,16 +537,18 @@ hist(all_classes, col=heat.colors(length(brk)), breaks=brk,
 
 ### Distribution sampling
 
-<ul>
- <li class⁼"fragment">We can use R to sample known distributions</li>
- <li class="fragment">Histograms are great for that too</li>
-</ul>
+* &shy;<!-- .element: class="fragment" -->We can use R to sample known distributions
+* &shy;<!-- .element: class="fragment" -->Histograms are great for that too
+
+<div class="fragment">
 
 ```R
 samples = rnorm(1000)
 
 hist(samples, col="lightblue", freq=F)
 ```
+
+</div>
 
 ---
 
@@ -607,5 +579,5 @@ boxplot(mpg~cyl, data=mtcars, notch=TRUE,
 
 ---
 
-### Finally
+### Finally!
 
