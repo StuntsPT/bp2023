@@ -2,11 +2,11 @@
 
 #### Bioinformática Prática 2021
 
-<img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
+![Logo FCUL](C01_assets/logo-FCUL.png)
 
-<center>Francisco Pina Martins</center>
+Francisco Pina Martins
 
-<center>[@FPinaMartins](https://twitter.com/FPinaMartins)</center>
+[@FPinaMartins](https://twitter.com/FPinaMartins)
 
 ---
 
@@ -205,15 +205,15 @@ for (i in c(3:5)){
 ### Say "no" to "hard coding" things
 
 ```R
-obs = c(5, 32)
-exp = c(1/11, 9/11)
+obsvd = c(5, 32)
+exptd = c(1/11, 9/11)
 ```
 
 Vs.
 
 ```R
-obs = table(war_data[,"attacker_outcome"])
-exp = c(1/11, 9/11)
+obsvd = table(war_data[,"attacker_outcome"])
+exptd = c(1/11, 9/11)
 ```
 
 ---
