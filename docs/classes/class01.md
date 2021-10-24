@@ -52,6 +52,10 @@ Francisco Pina Martins
 * Seminário apresentado pelos alunos - 25%  <!-- .element: class="fragment" data-fragment-index="2" -->
 * Discussão de artigos científicos - 10%  <!-- .element: class="fragment" data-fragment-index="3" -->
 * Participação geral nas aulas - 15%. <!-- .element: class="fragment" data-fragment-index="4" -->
+* Melhorias:<!-- .element: class="fragment" data-fragment-index="5" -->
+  * Avaliação de cada componente é 'guardada'<!-- .element: class="fragment" data-fragment-index="6" -->
+  * Melhoria de exame pode ser feita ou no ano seguinte ou na época de recurso<!-- .element: class="fragment" data-fragment-index="7" -->
+  * Restantes componentes, só no ano seguinte<!-- .element: class="fragment" data-fragment-index="8" -->
 
 |||
 
