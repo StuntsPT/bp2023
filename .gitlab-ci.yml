@@ -11,7 +11,7 @@ pages:
     - git submodule update --init --recursive
   after_script:
     - sed -i '1 i<html>\n<head>\n<link rel="stylesheet" type="text/css" href="styles/main.css">\n</head>\n<body>\n' public/classes/exercises/*.html
-    - _TITLE=$(head -n 1 README.md | tail -c +3) && _SHORT=$(echo -n $_TITLE | tail -c 4) && sed -i "s|<body>|<body><header>\n<div class='container'>\n<h1>FE${_SHORT}</h1>\n<h2>${_TITLE}</h2>\n</div>\n</header>\n<div class='container'>\n<section id='main_content'>|" public/classes/exercises/*.html
+    - _TITLE=$(head -n 1 README.md | tail -c +3) && _SHORT=$(echo -n $_TITLE | tail -c 4) && sed -i "s|<body>|<body><header>\n<div class='container'>\n<h1>BP${_SHORT}</h1>\n<h2>${_TITLE}</h2>\n</div>\n</header>\n<div class='container'>\n<section id='main_content'>|" public/classes/exercises/*.html
 #    - sed -i 's|</body>|</section>\n</div>\n</body>|' public/classes/exercises/*.html
     - for i in public/classes/exercises/*.html; do echo -e -n '\n</section>\n</div>\n</body>\n</html>' >> ${i}; done
     - mv html/styles public/classes/exercises/styles
