@@ -233,18 +233,21 @@ head(mtcars)  # Try this instead...
 mtcars[1, 2]  # Indexing
 mtcars["Mazda RX4", "cyl"]  # Named indexing!
 
+# All these get the same data (sort of)
 mtcars[[9]]  # Get column 9
-mtcars[,9]  # Also get column 9
+mtcars[, 9]  # Also get column 9
 mtcars[["am"]]  # Get column "am"
 mtcars$am  # Alternative - notice the lack of quotes
-mtcars[,"am"]  # Another alternative
-mtcars["mpg"]  # Calling it like this will get the names too
+mtcars[, "am"]  # Another alternative
+mtcars["am"]  # Calling it like this will get the names too
 
-mtcars[1,]  # Get row 1
+# Same thing
+mtcars[1, ]  # Get row 1
+mtcars["Mazda RX4", ]
 
-mtcars$mpg <= 15  # Logical indexing!!!111!!one
+mtcars[, "mpg"] <= 15  # Logical indexing!!!111!!one
 
-mtcars[mtcars$cyl == 6,]  # Can you guess what this does?
+mtcars[mtcars[, "cyl"] == 6, ]  # Can you guess what this does?
 ```
 
 ---
