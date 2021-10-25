@@ -8,6 +8,8 @@ rownames(scratch_df) = c("r1", "r2", "r3", "r4")
 ## 2. Diatoms data
 
 diatoms_data = read.csv("../diatoms_data.csv", header=TRUE, row.names=2, sep=",")
+#Use online data:
+diatoms_data = read.csv("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv", row.names=2)
 diatoms_data["CC1", "Species.richness"]
 diatoms_data[,"Diversity"]
 diatoms_data["DC1",]
