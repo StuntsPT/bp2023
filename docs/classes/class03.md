@@ -72,16 +72,10 @@ Francisco Pina Martins
 
 ### Dependent & independent variables
 
-
 * &shy;<!-- .element: class="fragment" -->Independent variables
-
-* &shy;<!-- .element: class="fragment" -->May cause change in dependent variables
-
+  * &shy;<!-- .element: class="fragment" -->May cause change in dependent variables
 * &shy;<!-- .element: class="fragment" -->Dependent variables
-
-* &shy;<!-- .element: class="fragment" -->Is affected by changes in another variable
-
-
+  * &shy;<!-- .element: class="fragment" -->Is affected by changes in another variable
 
 |||
 
@@ -181,7 +175,6 @@ Francisco Pina Martins
 * &shy;<!-- .element: class="fragment" -->Standard deviation (σ) - [Square root of variance](https://www.mathsisfun.com/data/standard-deviation-formulas.html)
 * &shy;<!-- .element: class="fragment" -->Coefficient of variation - Ratio of Std. Dev. to the mean
 * &shy;<!-- .element: class="fragment" -->Standard error - Std. Dev. of the sampling distribution
-* &shy;<!-- .element: class="fragment" -->[Confidence interval](https://www.dummies.com/education/science/biology/confidence-interval-basics/)
 
 |||
 
@@ -200,7 +193,6 @@ Francisco Pina Martins
   * Mean + Std. Dev. <!-- .element: class="fragment" data-fragment-index="2" -->
   * Median + range <!-- .element: class="fragment" data-fragment-index="2" -->
 * Always remember: <!-- .element: class="fragment" data-fragment-index="3" -->
-  * Which measurements you have used <!-- .element: class="fragment" data-fragment-index="4" -->
   * Present the value of "N" <!-- .element: class="fragment" data-fragment-index="4" -->
   * Indicate the units!!!!111!one! <!-- .element: class="fragment" data-fragment-index="4" -->
 
@@ -284,9 +276,16 @@ Francisco Pina Martins
 
 * Logaritmic <!-- .element: class="fragment" data-fragment-index="1" -->
 * Square root <!-- .element: class="fragment" data-fragment-index="2" -->
-* Exponetial <!-- .element: class="fragment" data-fragment-index="3" -->
-* Arcsen <!-- .element: class="fragment" data-fragment-index="4" -->
+* Arcsin <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
 ### That's it for today!
+
+---
+
+### References
+
+* [Biostats Handbook](http://www.biostathandbook.com/)
+* [Dispersal measurements formulas](https://www.mathsisfun.com/data/standard-deviation-formulas.html)
+* [Data transformations](https://sethroberts.net/2010/03/30/andrew-gelmans-top-statistical-tip/)
