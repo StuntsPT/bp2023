@@ -33,6 +33,19 @@ Francisco Pina Martins
 
 <font color="red">The comparison is considered **significant** if the relationship between tested datasets is unlikely to be a chance realization of H<sub>0</sub> according to a **pre-determined** threshold.</font> <!-- .element: class="fragment" data-fragment-index="6" -->
 
+|||
+
+### More on H<sub>0</sub> and H<sub>1</sub>
+
+* &shy;<!-- .element: class="fragment"-->H<sub>0</sub> states that a measured quantity is 0
+  * &shy;<!-- .element: class="fragment"-->Eg.: <font color="gold">*The difference between these two samples is not significantly different from 0*</font>
+* &shy;<!-- .element: class="fragment"-->H<sub>1</sub> states the *alternative hypothesis*
+  * &shy;<!-- .element: class="fragment"-->Eg.: <font color="purple">*The difference between these two samples is significantly different from 0*</font>
+* &shy;<!-- .element: class="fragment"-->Rejecting H<sub>0</sub> forces us to accept H<sub>1</sub>
+* &shy;<!-- .element: class="fragment"-->Not rejecting H<sub>0</sub> forces us to accept it
+  * &shy;<!-- .element: class="fragment"-->In neither case are H<sub>0</sub> or H<sub>1</sub> **proven**
+  * &shy;<!-- .element: class="fragment"-->More data may change the outcome
+
 ---
 
 ### Why are they necessary?
@@ -61,6 +74,18 @@ When the goal is to make inferences regarding the population
 </br>
 
 <font color="red">Parametric tests usually have more statistical power than their N-P counterparts.</font> <!-- .element: class="fragment" data-fragment-index="4" -->
+
+|||
+
+### Shapiro test
+
+* &shy;<!-- .element: class="fragment"-->Tests for "normality"
+  * &shy;<!-- .element: class="fragment"-->H<sub>0</sub>: *This sample's value distribution is **not** significantly different from a normal distribution*
+  * &shy;<!-- .element: class="fragment"-->H<sub>1</sub>: *This sample's value distribution is significantly different from a normal distribution*
+* &shy;<!-- .element: class="fragment"-->*p*-value is **below** our pre-determined *alpha* - H<sub>0</sub> is rejected:
+  * &shy;<!-- .element: class="fragment"-->H<sub>1</sub> is accepted - "Our data distribution is not 'normal'" - Non-parametric test
+* &shy;<!-- .element: class="fragment"-->*p*-value is **above** our pre-determined *alpha* - H<sub>0</sub> cannot be rejected:
+  * &shy;<!-- .element: class="fragment"-->H<sub>0</sub> is accepted - "Our data distribution is 'normal'" - Parametric test
 
 ---
 
@@ -139,8 +164,8 @@ ph = diatoms[,"pH"]
 
 shapiro.test(ph)
 
-t.test(ph, mu=7, conf.level=0.95)
-t.test(ph, mu=7.7, conf.level=0.95)
+t.test(ph, mu=7)
+t.test(ph, mu=7.7)
 ```
 
 ---
@@ -205,7 +230,7 @@ south_rivers_doxy = diatoms[diatoms[, "Stream"] == "AR" | diatoms[, "Stream"] ==
 shapiro.test(north_rivers_doxy)
 shapiro.test(south_rivers_doxy)
 
-t.test(x=north_rivers_doxy, y=south_rivers_doxy, conf.level=0.95)
+t.test(x=north_rivers_doxy, y=south_rivers_doxy)
 ```
 
 ---
@@ -222,7 +247,7 @@ south_rivers_alk = diatoms[,"Alk"][diatoms[,"Stream"] == "AR" | diatoms[,"Stream
 shapiro.test(north_rivers_alk)
 shapiro.test(south_rivers_alk)
 
-wilcox.test(x=north_rivers_alk, y=south_rivers_alk, conf.level=0.95)
+wilcox.test(x=north_rivers_alk, y=south_rivers_alk)
 ```
 
 ---
@@ -252,7 +277,7 @@ ph2017 = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classe
 shapiro.test(ph)
 shapiro.test(ph2017)
 
-t.test(x=ph, y=ph2017, paired=TRUE, conf.level=0.95)
+t.test(x=ph, y=ph2017, paired=TRUE)
 ```
 
 ---
@@ -268,7 +293,7 @@ ph2017 = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classe
 shapiro.test(ph)
 shapiro.test(ph2017)
 
-wilcox.test(x=ph, y=ph2017, paired=TRUE, conf.level=0.95)
+wilcox.test(x=ph, y=ph2017, paired=TRUE)
 ```
 
 ---
