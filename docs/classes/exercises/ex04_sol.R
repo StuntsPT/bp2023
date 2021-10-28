@@ -16,7 +16,7 @@ png(filename="/home/francisco/Bp_w_PT.png", height=900, width=900)  # The file p
 
 plot(pt_f_values, type="l", main="Blood pressure PT women 1985-2005", axes=FALSE, xlab="Years", ylab="Blood Pressure (mmHg)", ylim=c(floor(min_f_y), ceiling(max_f_y)))
 axis(1, at=1:length(colnames(bp_f_1985_2005)), lab=colnames(bp_f_1985_2005))
-axis(2, at=floor(min_f_y):ceiling((max_f_y + 1)), las=1)  # The +1 ensures everything is within the Y limits
+axis(2, at=floor(min_f_y):ceiling((max_f_y)), las=1)
 
 def.off()
 
@@ -33,7 +33,7 @@ png(filename="/home/francisco/Bp_wm_PT.png", height=900, width=900)
 plot(pt_f_values, type="l", main="Blood pressure PT 1980-2008", axes=FALSE, xlab="Years", ylab="Blood Pressure (mmHg)", col="violet", ylim=c(floor(min_y), ceiling(max_y)), lwd=4)
 lines(pt_m_values, type="l", col="cyan", lwd=4)
 axis(1, at=1:length(colnames(bp_f)), lab=colnames(bp_f))
-axis(2, at=floor(min_y):(ceiling(max_y) + 1), las=1)
+axis(2, at=floor(min_y):(ceiling(max_y)), las=1)
 
 legend("topright", c("Women", "Men"),
        cex=0.8,
@@ -58,7 +58,7 @@ lines(es_f_values, type="l", col="yellow", lwd=4, lty=1)
 lines(es_m_values, type="l", col="yellow", lwd=4, lty=2)
 
 axis(1, at=1:length(colnames(bp_f)), lab=colnames(bp_f))
-axis(2, at=floor(y_range[1] - 1):ceiling(y_range[2]) + 1, las=1)
+axis(2, at=floor(y_range[1] - 1):ceiling(y_range[2]), las=1)
 
 legend("topright", c("PT ♀", "PT ♂ ", "ES ♀", "ES ♂ "),
        cex=0.8,
