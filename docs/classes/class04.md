@@ -315,7 +315,7 @@ dev.off()
 ```R
 classes_data = read.csv("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C04_assets/classes_data.txt", header=TRUE, sep="\t")
 
-barplot(classes_data[, "Charles")
+barplot(classes_data[, "Charles"])
 # Try with Scott too
 ```
 
