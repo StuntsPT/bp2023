@@ -67,7 +67,7 @@ xmulti(obs=red_beans, expr=c(1/3,1/3,1/3))
 # 2.4
 chisq.test(table(magic_beans), correct=TRUE)
 # H0: The bean colour does not influence the distribution of the size categories
-# The Chi² test does not reject H0, therefore independence between colour and size category prportions is assumed.
+# The Chi² test does not reject H0, therefore independence between colour and size category proportions is assumed.
 
 # 2.5
 obs=c(89, 322, 16)
