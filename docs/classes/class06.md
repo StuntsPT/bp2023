@@ -212,9 +212,7 @@ p.adjust(p_vals, method="fdr")
 obsvd = c(3, 11)
 exptd = c(0.5, 0.5)
 
-chisq.test(x=obsvd, p=exptd)
-
-binom.test(x=obsvd[1], n=sum(obsvd), p=exptd[1], conf.level=0.95)
+binom.test(x=obsvd[1], n=sum(obsvd), p=exptd[1])
 ```
 
 |||
@@ -284,6 +282,12 @@ if(!require("XNomial")){
 
 |||
 
+### The Null hypothesis
+
+"The variables' relative proportions are independent" <!-- .element: class="fragment" data-fragment-index="1" -->
+
+|||
+
 ### Chi² test of independence example
 
 * Suppose the following situation:
@@ -316,14 +320,8 @@ colnames(side_effects_matrix) = c("No.side.effects",
 
 
 chisq.test(side_effects_matrix,
-           correct=TRUE)
+           correct=TRUE)  # Corrections? Why?
 ```
-
-|||
-
-### The Null hypothesis
-
-"The variables' relative proportions are independent" <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
@@ -521,8 +519,7 @@ shapiro.test(Data[,"Species"])
 # Correlation
 cor.test(x=Data$Latitude,
          y=Data$Species,
-         method = "pearson",
-         conf.level = 0.95)
+         method = "pearson")
 
 # Regression
 model = lm(Species ~ Latitude,
@@ -542,11 +539,18 @@ slope = model$coefficient["Latitude"]
 
 abline(intercept, slope,
        lty=1, lwd=2, col="blue")
+
+# Implicit alternative:
+abline(model,
+       lty=1,
+       lwd=2,
+       col="forestgreen")
 ```
 
 ---
 
-### Reference
+### References
 
-[Handbook of Biological Statistics](http://www.biostathandbook.com)
-
+* [Handbook of Biological Statistics](http://www.biostathandbook.com)
+* [R companion](http://rcompanion.org/rcompanion/e_01.html)
+* [Plotting regression lines](http://www.theanalysisfactor.com/linear-models-r-plotting-regression-lines/)
