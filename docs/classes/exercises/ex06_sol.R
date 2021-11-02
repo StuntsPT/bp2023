@@ -103,4 +103,30 @@ abline(intercept, slope, col="forestgreen", lwd=3)
 # Alternative
 abline(model, col="blue", lwd=3)
 
+## Netflix Originals
+
+# 4.1
+netflix = read.csv("", row.names=1)
+
+# 4.2
+
+hist(netflix[,"IMDB.Score"])  # Need embellishment
+hist(netflix[,"Runtime"])  # Need embellishment
+
+# 4.3
+plot(x=netflix[,"Runtime"], y=netflix[,"IMDB.Score"])  # Needs embellishment
+
+# 4.4
+shapiro.test(netflix[,"IMDB.Score"])
+shapiro.test(netflix[,"Runtime"])
+
+cor.test(x=netflix[,"Runtime"], y=netflix[,"IMDB.Score"], method ="spearman")
+# H0: The distribution of "IMDB.Score" values is not significantly different from a normal distribution. (Rejected)
+# H0: The distribution of "Runtime" values is not significantly different from a normal distribution. (Rejected)
+# H0: As the values of "Runtime" increase, the values of "IMDB.Score" do not increase or decrease. (Not rejected)
+
+# 4.5
+model = lm(IMDB.Score ~ Runtime, data=netflix)
+abline(model, lwd=2, col="red")
+
 
