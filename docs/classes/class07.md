@@ -64,6 +64,15 @@ Euclidian distances!
 
 ![Euclidian_dist](C07_assets/euclidian.png) 
 
+<div class="fragment">
+
+```R
+sqrt(sum((p - q)^2))
+```
+
+</div>
+<div class="fragment">
+
 ```R
 euclidean_distance = function(p, q){
 
@@ -71,7 +80,10 @@ euclidean_distance = function(p, q){
 
     return(result)
 }
+
 ```
+
+</div>
 
 |||
 
@@ -82,7 +94,7 @@ set.seed(123)
 scater_data = data.frame(x=sample(1:10000, 7), 
                          y=sample(1:10000, 7))
 
-plot(x=scater_data$x, y=scater_data$y, col=1:7, pch=19)
+plot(x=scater_data[,"x"], y=scater_data[,"y"], col=1:7, pch=19)
 
 legend("topleft",
        legend = c(row.names(scater_data)),
@@ -95,7 +107,7 @@ legend("topleft",
 ### A simple example
 
 ```R
-euclidean_distance(scater_data[1,], scater_data[2,])
+euclidean_distance(scater_data[1,], scater_data[2,])  # Try other coords!
 
 triang = dist(scater_data)
 # dist() can use the following methods: "euclidean" (default), "maximum", "manhattan", "canberra", "binary" or "minkowski"
