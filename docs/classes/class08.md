@@ -28,7 +28,7 @@ Automation <!-- .element: class="fragment" data-fragment-index="1" -->
 
 * Performing tasks without human intervention
 
-![Automate all the things](C09_assets/automate.jpg) <!-- .element: class="fragment" data-fragment-index="1" -->
+![Automate all the things](C08_assets/automate.jpg) <!-- .element: class="fragment" data-fragment-index="1" -->
 
 ---
 
