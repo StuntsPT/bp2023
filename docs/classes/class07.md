@@ -12,6 +12,73 @@ Francisco Pina Martins
 
 ## Exploratory data analysis
 
+---
+
+### Measuring distance
+
+* &shy;<!-- .element: class="fragment" data-fragment-index="1"-->Exploratory analyses are about this
+* &shy;<!-- .element: class="fragment" data-fragment-index="2"-->Samples have lots of traits
+  * &shy;<!-- .element: class="fragment" data-fragment-index="3"-->How far apart are they?
+* &shy;<!-- .element: class="fragment" data-fragment-index="4"-->Let's start simple
+
+&shy;<!-- .element: class="fragment" data-fragment-index="5"-->![Ruler](C07_assets/ruler.png)
+
+|||
+
+### Measuring distance
+
+```R
+set.seed(123)
+scatter_data = data.frame(x=sample(1:10000, 7), 
+                         y=sample(1:10000, 7))
+
+plot(x=scatter_data[,"x"], y=scatter_data[,"y"], col=1:7, pch=19)
+
+legend("topleft",
+       legend = c(row.names(scatter_data)),
+       pch = 19,
+       col = c(1:7))
+```
+
+|||
+
+### Measuring distance
+
+Euclidean distances!
+
+![Euclidian_dist](C07_assets/euclidian.png) 
+
+<div class="fragment">
+
+```R
+sqrt(sum((p - q)^2))
+```
+
+</div>
+<div class="fragment">
+
+```R
+euclidean_distance = function(p, q){
+
+    result = sqrt(sum((p - q)^2))
+
+    return(result)
+}
+```
+
+</div>
+<div class="fragment">
+
+```R
+euclidean_distance(c(1,1), c(0,0))
+
+euclidean_distance(scatter_data[1,], scatter_data[2,])  # Try other coords!
+```
+
+</div>
+
+---
+
 ### Clustering analysis
 
 ---
@@ -60,59 +127,13 @@ Francisco Pina Martins
 
 ### A simple example
 
-Euclidian distances!
-
-![Euclidian_dist](C07_assets/euclidian.png) 
-
-<div class="fragment">
-
 ```R
-sqrt(sum((p - q)^2))
-```
-
-</div>
-<div class="fragment">
-
-```R
-euclidean_distance = function(p, q){
-
-    result = sqrt(sum((p - q)^2))
-
-    return(result)
-}
-
-```
-
-</div>
-
-|||
-
-### A simple example
-
-```R
-set.seed(123)
-scater_data = data.frame(x=sample(1:10000, 7), 
-                         y=sample(1:10000, 7))
-
-plot(x=scater_data[,"x"], y=scater_data[,"y"], col=1:7, pch=19)
-
-legend("topleft",
-       legend = c(row.names(scater_data)),
-       pch = 19,
-       col = c(1:7))
-```
-
-|||
-
-### A simple example
-
-```R
-euclidean_distance(scater_data[1,], scater_data[2,])  # Try other coords!
-
-triang = dist(scater_data)
+triang = dist(scatter_data)
 # dist() can use the following methods: "euclidean" (default), "maximum", "manhattan", "canberra", "binary" or "minkowski"
 
-plot(hclust(triang, method="complete"))
+clustered_data = hclust(triang, method="complete")
+
+plot(clustered_data)
 ```
 
 ---
@@ -147,8 +168,13 @@ Luke_Skywalker 13 12 18 16
 student_matrix = as.matrix(read.table(textConnection(students),
                            header=TRUE,
                            row.names=1))
-plot(hclust(dist(student_matrix),method="average"))
 
+triang_students = dist(student_matrix)
+students_cluster = hclust(triang_students ,method="average")
+plot(students_cluster)
+
+# Alternative:
+plot(hclust(dist(student_matrix),method="average"))
 ```
 
 ---
@@ -356,13 +382,15 @@ winePCAmethods@R2
 Let's test it!
 
 ```R
-shapiro.test(wine$Ash)
-wilcox.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "3"])
-wilcox.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "1"])
+shapiro.test(wine$Ash[wine$Cultivar == "1"])
+shapiro.test(wine$Ash[wine$Cultivar == "2"])
+shapiro.test(wine$Ash[wine$Cultivar == "3"])
+
+t.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "3"])
+t.test(x=wine$Ash[wine$Cultivar == "2"], y=wine$Ash[wine$Cultivar == "1"])
 
 # What about this one?
-wilcox.test(x=wine$Ash[wine$Cultivar == "3"], y=wine$Ash[wine$Cultivar == "1"])
-
+t.test(x=wine$Ash[wine$Cultivar == "3"], y=wine$Ash[wine$Cultivar == "1"])
 ```
 
 ---
