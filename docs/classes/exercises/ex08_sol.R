@@ -35,32 +35,32 @@ repeater(c("Three", "Test", "Words"))
 male_data = read.csv(url("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdDU5SnRoQ0xlZWhwRUZ6RFNQV042enc&output=csv"), header=TRUE, row.names=1)
 female_data = read.csv(url("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdGJHcHZkSUdBcU56aS1OT3lLeU4tRHc&output=csv"), header=TRUE, row.names=1)
 
-cholesterol_tests = function(male_chol, female_chol, alpha) {
-    res = t.test(x=male_chol, y=female_chol, conf.level=1-alpha)
+cholesterol_tests = function(male_chol, female_chol) {
+    res = t.test(x=male_chol, y=female_chol)
 
     return(res$p.value)
 }
 
 p_values = c()
 for (i in c("X1980", "X1990", "X2000", "X2008")){
-    p_val = cholesterol_tests(male_data[, i], female_data[, i], 0.05)
+    p_val = cholesterol_tests(male_data[, i], female_data[, i])
     p_values = c(p_values, p_val)
 }
 
 print(p.adjust(p_values, method="fdr"))
 
 # 2.2
-looper = function (years, alpha) {
+looper = function (years) {
     p_values = c()
     for (i in years) {
-        p_val = cholesterol_tests(male_data[, i], female_data[, i], alpha)
+        p_val = cholesterol_tests(male_data[, i], female_data[, i])
         p_values = c(p_values, p_val)
     }
     adj_pvals = p.adjust(p_values, method="fdr")
     return(adj_pvals)
 }
 
-print(looper(c("X1983", "X1992", "X1998", "X2003", "X2005"), 0.05))
+print(looper(c("X1983", "X1992", "X1998", "X2003", "X2005")))
 
 # 2.3
 # Yes!
@@ -74,7 +74,7 @@ diatoms_regression = function (x, y, file_name, xlab, ylab) {
     } else { corr_method = "pearson"
 
     }
-    cor_results = cor.test(x=x, y=y, method=corr_method, conf.level=0.95)
+    cor_results = cor.test(x=x, y=y, method=corr_method)
     regress = lm(y ~ x)
     png(filename=file_name)
     plot(x=x,

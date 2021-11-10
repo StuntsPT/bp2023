@@ -90,7 +90,6 @@ plot(x=faithful$eruptions,
 # 3.2
 shapiro.test(faithful$waiting)
 shapiro.test(faithful$eruptions)
-cor.test(x=faithful$eruptions, y=faithful$waiting, method="spearman", conf.level=0.95)
 model = lm(waiting ~ eruptions, data=faithful)
 summary(model)
 # The R-squared value is of 0.8115 (0.8108 adjusted) and the correlation is significant.

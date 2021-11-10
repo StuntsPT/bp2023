@@ -58,7 +58,7 @@ shapiro.test(malaria_deaths$X2005)
 # Both samples' distributions are significantly different from a normal distribution.
 # A non-parametric test should be used.
 
-wilcox.test(x=malaria_deaths$X2003, y=malaria_deaths$X2005, paired=TRUE, conf.level=0.95)
+wilcox.test(x=malaria_deaths$X2003, y=malaria_deaths$X2005, paired=TRUE)
 # There are no significant differences between the number of malaria deaths in 2003 and 2005.
 
 # 1.3
@@ -176,9 +176,9 @@ single_sample_test = function(sample, value, norm_alpha, test_alpha) {
     norm_test = shapiro.test(sample)$p.value
 
     if (norm_test < norm_alpha) {
-        test_res = wilcox.test(x=sample, mu=value, conf.level=(1-test_alpha))$p.value
+        test_res = wilcox.test(x=sample, mu=value)$p.value
     } else {
-        test_res = t.test(x=sample, mu=value, conf.level=(1-test_alpha))$p.value
+        test_res = t.test(x=sample, mu=value)$p.value
     }
     if (test_res < test_alpha) {
         msg = "Reject H0: There are significant differences between the sample and the value."
@@ -199,6 +199,6 @@ print(single_sample_test(sample=mtcars$hp, value=100, norm_alpha=0.05, test_alph
 # No differences
 print(single_sample_test(sample=mtcars$mpg, value=20, norm_alpha=0.01, test_alpha=0.05))
 
-# Differneces
+# Differences
 print(single_sample_test(sample=mtcars$mpg, value=10, norm_alpha=0.01, test_alpha=0.05))
 

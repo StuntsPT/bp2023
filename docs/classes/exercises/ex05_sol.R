@@ -91,7 +91,7 @@ t.test(x=female_chol$`1980`, y=female_chol$`2008`, paired=TRUE)
 # Mr. Anderson problem
 shapiro.test(male_chol$`1999`)
 
-wilcox.test(x=male_chol$`1999`, mu=3.6666, conf.level=0.99)
+wilcox.test(x=male_chol$`1999`, mu=3.6666)
 
 # H0: Mr. Anderson's cholesterol levels are not different from our 1999 sample.
 # Wilcoxon's test p-value was below the defined threshold of 0.01, meaning
