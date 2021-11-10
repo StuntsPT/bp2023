@@ -141,8 +141,8 @@ malaria_trendplot(full_data=malaria_cases, title="Worldwide malaria cases over t
 malaria_trendplot(full_data=malaria_deaths, title="Worldwide malaria deaths over time", save_location="~/malaria_deaths_trendplot.png", ylab="Number of malaria deaths")
 
 # 3.1
-source("https://bioconductor.org/biocLite.R")
-biocLite("pcaMethods")
+install.packages("BiocManager")
+BiocManager::install("pcaMethods")
 library(pcaMethods)
 
 community_data = read.csv("https://datastore.landcareresearch.co.nz/dataset/43d27a6e-544a-4134-b19f-12c78e6a5652/resource/aa238833-e9e8-4ac1-8ba7-ae2737e0f7f3/download/april-dvp.csv", header=TRUE, sep=",")
