@@ -165,7 +165,7 @@ slplot(plant_pca,
        scoresLoadings=c(FALSE,TRUE),
        main="PCA from Alberta grassland plant data")
 
-# According to the "Loadings" plot, the variables "Root_kg_DM_ha_top_0.1m" and "Root_kg_DM_ha_top_0.6m" seem to be responsible for most variation, being associated with both PC1 and PC2.
+# According to the "Loadings" plot, the variables "Rye.per" and "Fdiv" seem to be responsible for a considerable part of the observed variation, being associated with both PC1 and PC2.
 
 # 3.4
 plant_pca@R2
