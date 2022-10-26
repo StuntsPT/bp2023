@@ -230,6 +230,7 @@ dframe = data.frame(n, s, b)  # dframe is a data frame
 ```R
 mtcars  # Built in data! 
 head(mtcars)  # Try this instead...
+View(mtcars)  # Or this
 mtcars[1, 2]  # Indexing
 mtcars["Mazda RX4", "cyl"]  # Named indexing!
 
@@ -264,6 +265,7 @@ sum(1, 2)  # A sum function
 head(mtcars)  # Show the first few lines of...
 
 seq(10, 30)  # Create a sequence (start, end, [step])
+seq(10, 30, 2)  # See "step" in action
 ```
 
 * We can also define our own functions. More on that later. <!-- .element: class="fragment" data-fragment-index="1" -->
@@ -291,7 +293,6 @@ table()
 * There are functions than can be used to transform variables:
 
 ```R
-
 as.data.frame(MATRIX)
 
 as.numeric(INTEGER)
@@ -299,7 +300,6 @@ as.numeric(INTEGER)
 as.character(NUMERIC)
 
 # Many more!
-
 ```
 
 ---
