@@ -1,4 +1,4 @@
-## Possible solutions for class 02 exercises (https://stuntspt.gitlab.io/bp2021/classes/exercises/ex02.html)
+## Possible solutions for class 02 exercises (https://stuntspt.gitlab.io/bp2022/classes/exercises/ex02.html)
 
 ## 1. Data Structures
 
@@ -9,7 +9,7 @@ rownames(scratch_df) = c("r1", "r2", "r3", "r4")
 
 diatoms_data = read.csv("../diatoms_data.csv", header=TRUE, row.names=2, sep=",")
 #Use online data:
-diatoms_data = read.csv("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv", row.names=2)
+diatoms_data = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv", row.names=2)
 diatoms_data["CC1", "Richness"]
 diatoms_data[,"Diversity"]
 diatoms_data["DC1",]
@@ -18,7 +18,7 @@ diatoms_data[diatoms_data[, "Stream"] == "SR", ]
 ## 3. Online data
 
 # 3.1
-pokedata = read.csv("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t", row.names=2)
+pokedata = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t", row.names=2)
 
 # 3.2
 View(pokedata)
