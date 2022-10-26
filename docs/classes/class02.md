@@ -88,13 +88,13 @@ print("Good Morning World!")
 
 ```R
 txt = "Good Morning World!"
-txt <- "Good Morning World!"  # Old syntax
+txt <- "Good Morning World!"  # "Old" syntax
 print(txt)
 ```
 
 ---
 
-### Basic variable types
+### Basic data types
 
 * Numeric (1.5) - AKA "Float" <!-- .element: class="fragment" data-fragment-index="1" -->
 * Integer (1) - these have to be coerced <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -104,7 +104,7 @@ print(txt)
 
 |||
 
-### Basic variable types
+### Basic data types
 
 ```R
 number = 1.5
@@ -115,7 +115,7 @@ class(number)
 
 ---
 
-### Advanced variable types
+### Advanced data types
 
 #### Vector
 
@@ -155,7 +155,7 @@ a[2]  # Indexing
 
 ---
 
-### Advanced variable types
+### Advanced data types
 
 #### Factor
 
@@ -174,7 +174,7 @@ captured_pokemon_types = levels(as.factor(captured_pokemon))
 
 ---
 
-### Advanced variable types
+### Advanced data types
 
 #### Matrix
 
@@ -193,7 +193,7 @@ M[,1]  # Get a single column
 
 ---
 
-### Advanced variable types
+### Advanced data types
 
 #### List
 
@@ -208,7 +208,7 @@ x = list(n, s, b, 3)  # x contains copies of n, s, b
 
 ---
 
-### Advanced variable types
+### Advanced data types
 
 #### Data Frame
 
@@ -223,7 +223,7 @@ dframe = data.frame(n, s, b)  # dframe is a data frame
 
 |||
 
-### Advanced variable types
+### Advanced data types
 
 #### Data Frame
 
@@ -286,7 +286,7 @@ table()
 
 ---
 
-### Variable coercion
+### Data coercion (AKA *Typecasting*)
 
 * There are functions than can be used to transform variables:
 
