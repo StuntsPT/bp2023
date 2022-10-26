@@ -1,6 +1,6 @@
 ### Class #1
 
-#### Bioinformática Prática 2021
+#### Bioinformática Prática 2022
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
@@ -14,11 +14,11 @@ Francisco Pina Martins
 
 **1ª semana**
 
-* 25-10-2021 – Apresentação; organização e tratamento de dados
-* 26-10-2021 – Introdução ao R
-* 27-10-2021 *Dia de Ciências* – Revisão de conceitos estatísticos (14-16h) - Seminário
-* 28-10-2021 – Gráficos em R
-* 29-10-2021 – Testes de hipóteses I
+* 31-10-2022 – Apresentação; organização e tratamento de dados
+* 01-11-2022 – **FERIADO**
+* 02-11-2022 – Revisão de conceitos estatísticos (14-16h) - Seminário
+* 03-11-2022 - Introdução ao R
+* 04-11-2022 – Gráficos em R
 
 |||
 
@@ -26,11 +26,11 @@ Francisco Pina Martins
 
 **2ª semana**
 
-* 01-11-2021 – FERIADO
-* 02-11-2021 – Testes de hipóteses II
-* 03-11-2021 – Análise exploratória
-* 04-11-2021 – **Journal Club** (14-16h) - Seminário
-* 05-11-2021 – Automatização e reprodutibilidade
+* 07-11-2022 – Testes de hipóteses I
+* 08-11-2022 – Testes de hipóteses II
+* 09-11-2022 – **Journal Club** (14-16h) - Seminário
+* 10-11-2022 – Análise exploratória
+* 11-11-2022 – Automatização e reprodutibilidade
 
 |||
 
@@ -38,11 +38,11 @@ Francisco Pina Martins
 
 **3ª semana**
 
-* 08-11-2021 – **Apresentações**
-* 09-11-2021 – **Apresentações**
-* 10-11-2021 – Revisões (14-16h) - Seminário
-* 11-11-2021 – Exercícios
-* 12-11-2021 – **Exame TP**
+* 14-11-2022 – **Apresentações**
+* 15-11-2022 – **Apresentações**
+* 16-11-2022 – Revisões (14-16h) - Seminário
+* 17-11-2022 – Exercícios
+* 18-11-2022 – **Exame TP**
 
 ---
 
@@ -72,7 +72,7 @@ Francisco Pina Martins
 * Apresentação individual de 10 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
   * Discussão de 5 minutos <!-- .element: class="fragment" data-fragment-index="1" -->
 * Enviem um artigo científico à vossa escolha por email <!-- .element: class="fragment" data-fragment-index="2" -->
-  * Focar a apresentação nos conteúdos relacionados com o programa da UC <!-- .element: class="fragment" data-fragment-index="2" -->
+  * Apresentação deve ser focada nos conteúdos relacionados com o programa da UC <!-- .element: class="fragment" data-fragment-index="2" -->
 
 |||
 
@@ -111,5 +111,5 @@ sorteio = function(names_file, seed) {
     return(shuffled_names)
 }
 
-print(sorteio("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
+print(sorteio("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
 ```
