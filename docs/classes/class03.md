@@ -200,7 +200,24 @@ Francisco Pina Martins
 
 ### Descriptive stats can be deceiving!
 
-[![Anscombe's Quartet](C03_assets/Anscombe.png)](https://en.wikipedia.org/wiki/Anscombe%27s_quartet) <!-- .element: class="fragment" data-fragment-index="1" -->
+
+<div class="fragment" style="float:left; width:60%">
+
+[![Anscombe's Quartet](C03_assets/Anscombe.png)](https://en.wikipedia.org/wiki/Anscombe%27s_quartet) <!-- .element: class="fragment" -->
+
+</div>
+
+<div class="fragment" style="float:right; width:40%">
+
+All these datsets have:
+
+|          | X    | Y     |
+|----------|:----:|:-----:|
+| Mean     | 9    | 7.50  |
+| Var      | 11   | 4.125 |
+| R²       | 0.67         |
+
+</div>
 
 ---
 
