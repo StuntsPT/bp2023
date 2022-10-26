@@ -1,6 +1,6 @@
 ### Class #5
 
-#### Bioinformática Prática 2021
+#### Bioinformática Prática 2022
 
 ![Logo FCUL](C01_assets/logo-FCUL.png)
 
@@ -159,7 +159,7 @@ legend("topright", inset=.05, title="Distributions",
 ### Single sample *t-test* example
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms[,"pH"]
 
 shapiro.test(ph)
@@ -181,7 +181,7 @@ Is it above the reference value for rivers (10 μg/L)? <!-- .element: class="fra
 ### N-P equivalent - Wilcoxon test
 
 ```R
-diatoms = read.csv("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv")
+diatoms = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv")
 zn = diatoms[,"Zn"]
 
 shapiro.test(zn)
@@ -219,7 +219,7 @@ Is the "Dissolved oxygen" different between Northern and Southern rivers?
 ### 2 samples *t-test* example
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 north_rivers_doxy = diatoms[,"Doxy"][diatoms[,"Stream"] == "ER" | diatoms[,"Stream"] == "BR" | diatoms[,"Stream"] == "SR"]
 south_rivers_doxy = diatoms[,"Doxy"][diatoms[,"Stream"] == "AR" | diatoms[,"Stream"] == "CC" | diatoms[,"Stream"] == "SPR"]
 
@@ -240,7 +240,7 @@ t.test(x=north_rivers_doxy, y=south_rivers_doxy)
 Is the "Alkalinity" different between Northern and Southern rivers?
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 north_rivers_alk = diatoms[,"Alk"][diatoms[,"Stream"] == "ER" | diatoms[,"Stream"] == "BR" | diatoms[,"Stream"] == "SR"]
 south_rivers_alk = diatoms[,"Alk"][diatoms[,"Stream"] == "AR" | diatoms[,"Stream"] == "CC" | diatoms[,"Stream"] == "SPR"]
 
@@ -269,10 +269,10 @@ If samples are not independent, a special variant must be used
 Has the rivers' pH changed significantly in the last 25 years?
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms[,"pH"]
 
-ph2017 = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/diatoms_ph_2017.csv"))[,"pH"]
+ph2017 = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/diatoms_ph_2017.csv"))[,"pH"]
 
 shapiro.test(ph)
 shapiro.test(ph2017)
@@ -285,10 +285,10 @@ t.test(x=ph, y=ph2017, paired=TRUE)
 ### N-P equivalent - Paired Wilcoxon test
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
 ph = diatoms[,"pH"]
 
-ph2017 = read.csv(url("https://gitlab.com/StuntsPT/bp2021/raw/master/docs/classes/C05_assets/diatoms_ph_2017.csv"))[,"pH"]
+ph2017 = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/diatoms_ph_2017.csv"))[,"pH"]
 
 shapiro.test(ph)
 shapiro.test(ph2017)

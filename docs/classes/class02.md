@@ -1,6 +1,6 @@
 ### Class #2
 
-#### Bioinformática Prática 2021
+#### Bioinformática Prática 2022
 
 ![FCUL Logo](C01_assets/logo-FCUL.png)
 

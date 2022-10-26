@@ -1,6 +1,6 @@
 ### Class #7
 
-#### Bioinformática Prática 2021
+#### Bioinformática Prática 2022
 
 ![FCUL Logo](C01_assets/logo-FCUL.png)
 
@@ -233,7 +233,7 @@ plot(hclust(dist(student_matrix),method="average"))
 Get the data and take a look at it.
 
 ```R
-student_df = read.csv("https://stuntspt.gitlab.io/bp2021/classes/C07_assets/students.csv",
+student_df = read.csv("https://stuntspt.gitlab.io/bp2022/classes/C07_assets/students.csv",
                       header=TRUE,
                       row.names=1,
                       sep=";")
