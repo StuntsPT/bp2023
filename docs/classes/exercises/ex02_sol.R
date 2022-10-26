@@ -24,18 +24,18 @@ pokedata = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/
 View(pokedata)
 
 # 3.3
-min_hp = min(pokedata[,"HP"])
-min_hp_pokemon = row.names(pokedata[pokedata[, "HP"] == min_hp, ])
+min_hp = min(pokedata[,"hp"])
+min_hp_pokemon = row.names(pokedata[pokedata[, "hp"] == min_hp, ])
 
-max_hp = max(pokedata[,"HP"])
-max_hp_pokemon = row.names(pokedata[pokedata[, "HP"] == max_hp, ])
+max_hp = max(pokedata[,"hp"])
+max_hp_pokemon = row.names(pokedata[pokedata[, "hp"] == max_hp, ])
 
 # 3.4
-table(pokedata$Type1)
+table(pokedata$type1)
 
-table(pokedata[pokedata$Generation == 1, "Type1"])
+table(pokedata[pokedata$Generation == 1, "type1"])
 
 # 3.5
-water_type_pokemon = pokedata[pokedata[,"Type1"] == "Water" | pokedata[,"Type2"] == "Water", ]
-max_sp_attack = max(water_type_pokemon[, "Sp.Attack"])
-max_sp_attack_water_pokemon = row.names(water_type_pokemon[water_type_pokemon[, "Sp.Attack"] == max_sp_attack, ])
+water_type_pokemon = pokedata[pokedata[,"type1"] == "Water" | pokedata[,"type2"] == "Water", ]
+max_sp_attack = max(water_type_pokemon[, "sp_attack"])
+max_sp_attack_water_pokemon = row.names(water_type_pokemon[water_type_pokemon[, "sp_attack"] == max_sp_attack, ])
