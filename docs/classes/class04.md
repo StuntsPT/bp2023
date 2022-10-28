@@ -245,8 +245,7 @@ classes_data = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/clas
 max_y = max(classes_data)
 plot_colors <- c("gray","red","orange")
 
-figure_path = "C:/figure.png"  # Windows
-figure_path = "~/figure.png"  # Linux & MacOS
+figure_path = "~/figure.png"
 
 png(filename=figure_path, height=295, width=300, 
     bg="white")
