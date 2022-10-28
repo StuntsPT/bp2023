@@ -389,7 +389,7 @@ barplot(t(classes_data),
         names.arg=c("Mon","Tue","Wed","Thu","Fri"),
         cex=0.8) 
 
-legend(6, 30,
+legend(5.8, 30,
        names(classes_data),
        cex=0.8,
        fill=heat.colors(3))
