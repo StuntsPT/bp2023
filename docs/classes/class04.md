@@ -207,7 +207,7 @@ plot(classes_data[, "Charles"], type="o", col=plot_colors[1], pch="x",
 # We also have to adjust our plotting function
 
 axis(1, at=1:5, lab=c("Mon","Tue","Wed","Thu","Fri"))
-axis(2, at=seq(0, max_y, 3)
+axis(2, at=seq(0, max_y, 3))
 # We also had to change the Y-axis to use the new variable
 
 lines(classes_data[, "Scott"], type="o", pch=22, lty=2,
