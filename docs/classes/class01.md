@@ -17,7 +17,7 @@ Francisco Pina Martins
 * 31-10-2022 – Apresentação; organização e tratamento de dados
 * 01-11-2022 – **FERIADO**
 * 02-11-2022 – Revisão de conceitos estatísticos (14-16h) - Seminário
-* 03-11-2022 - Introdução ao R
+* 03-11-2022 – Introdução ao R
 * 04-11-2022 – Gráficos em R
 
 |||
