@@ -142,13 +142,13 @@ We can perform a lot of operations on vectors:
 <div class="fragment">
 
 ```R
-a = c(1, 3, 5, 7)
-a * 5  # Multiplication
-b = c(1, 2, 4, 8) 
-a + b  # Arithmetics with vectors
-d = c(1, 2)
-a + d  # Recycling rule!
-a[2]  # Indexing
+odd = c(1, 3, 5, 7)
+odd * 5  # Multiplication
+even = c(2, 4, 6, 8) 
+odd + even  # Arithmetics with vectors
+small = c(1, 2)
+odd + small  # Recycling rule!
+odd[2]  # Indexing
 ```
 
 </div>
@@ -181,14 +181,14 @@ captured_pokemon_types = levels(as.factor(captured_pokemon))
 A **matrix** is a collection of **data elements** arranged in a **two-dimensional rectangular layout**. It is defined using a `function`.
 
 ```R
-M = matrix(c(1, 2, 3, 4, 5, 6),  # data elements
-           nrow=2,  # number of rows
-           ncol=3)  # number of columns
-M
+my_matrix = matrix(c(1, 2, 3, 4, 5, 6),  # data elements
+                   nrow=2,  # number of rows
+                   ncol=3)  # number of columns
+print(my_matrix)
 
-M[1,2]  # Bidimensional indexing!
-M[1,]  # Get a single row
-M[,1]  # Get a single column
+my_matrix[1,2]  # Bidimensional indexing!
+my_matrix[1,]  # Get a single row
+my_matrix[,1]  # Get a single column
 ```
 
 ---
@@ -239,10 +239,10 @@ mtcars[[9]]  # Get column 9
 mtcars[, 9]  # Also get column 9
 mtcars[["am"]]  # Get column "am"
 mtcars$am  # Alternative - notice the lack of quotes
-mtcars[, "am"]  # Another alternative
+mtcars[, "am"]  # Another alternative - arguably the most common
 mtcars["am"]  # Calling it like this will get the names too
 
-# Same thing
+# Same thing, but for rows
 mtcars[1, ]  # Get row 1
 mtcars["Mazda RX4", ]
 
@@ -349,12 +349,12 @@ Missing data is coded in R as `NA`, which stands for "**N**ot **A**vailable"
 <div class="fragment">
 
 ```R
-v = c(1, 2, NA, 4)
-is.na(v)
+incomplete_vector = c(1, 2, NA, 4)
+is.na(incomplete_vector)
 
-mean(v)
+mean(incomplete_vector)
 
-mean(v, na.rm=TRUE)
+mean(incomplete_vector, na.rm=TRUE)
 ```
 
 </div>
