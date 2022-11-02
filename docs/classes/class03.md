@@ -75,7 +75,7 @@ Francisco Pina Martins
 * &shy;<!-- .element: class="fragment" -->Independent variables
   * &shy;<!-- .element: class="fragment" -->May cause change in dependent variables
 * &shy;<!-- .element: class="fragment" -->Dependent variables
-  * &shy;<!-- .element: class="fragment" -->Is affected by changes in another variable
+  * &shy;<!-- .element: class="fragment" -->Affected by changes in another variable
 
 |||
 
@@ -83,10 +83,10 @@ Francisco Pina Martins
 
 ![Dendelion](C03_assets/Dandelion.jpg)
 
-* Nitrogen content of soil and density of dandelions <!-- .element: class="fragment" data-fragment-index="1" -->
+* Associating soil nitrogen content with dandelions density <!-- .element: class="fragment" data-fragment-index="1" -->
   * Nitrogen content might affect where dandelion plants live <!-- .element: class="fragment" data-fragment-index="2" -->
-  * What if dandelions use a lot of nitrogen from the soil? <!-- .element: class="fragment" data-fragment-index="3" -->
-* How could we test this? <!-- .element: class="fragment" data-fragment-index="4" -->
+  * Dandelions deplete the soil of nitrogen content <!-- .element: class="fragment" data-fragment-index="3" -->
+* Which is which? <!-- .element: class="fragment" data-fragment-index="4" -->
 
 ---
 
@@ -171,7 +171,7 @@ Francisco Pina Martins
 ### Dispersal
 
 * &shy;<!-- .element: class="fragment" -->Range - Diff. between Max. and Min.
-* &shy;<!-- .element: class="fragment" -->Variance - [Expectation of the squared deviation of a random variable from its mean](https://www.mathsisfun.com/data/standard-deviation-formulas.html)
+* &shy;<!-- .element: class="fragment" -->Variance - [Expectation of the squared deviation of a random variable from its mean](https://www.mathsisfun.com/data/standard-deviation.html)
 * &shy;<!-- .element: class="fragment" -->Standard deviation (σ) - [Square root of variance](https://www.mathsisfun.com/data/standard-deviation-formulas.html)
 * &shy;<!-- .element: class="fragment" -->Coefficient of variation - Ratio of Std. Dev. to the mean
 * &shy;<!-- .element: class="fragment" -->Standard error - Std. Dev. of the sampling distribution
