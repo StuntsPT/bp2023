@@ -469,7 +469,7 @@ barplot(as.matrix(classes_data),
         ylab= "Total Students",
         beside=TRUE,
         col=rainbow(5))
-# This is how we tell R to draw 2 plots at the same time
+# This is how we tell R to draw 2 plots in the same picture
 ```
 
 ---
