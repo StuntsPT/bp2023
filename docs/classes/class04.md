@@ -355,7 +355,7 @@ classes_data = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/clas
 barplot(t(classes_data),  # Let's transpose the matrix to get a different view
         main="Institute",
         ylab="Total Students",
-        col=heat.colors(3),  # Use heat colours instead of rainbow
+        col=c("grey", "red", "yellow"),  # Use heat colours instead of rainbow
         space=0.1,  # Add 10% space between each bar
         cex.axis=0.8,
         las=1,
@@ -365,7 +365,7 @@ barplot(t(classes_data),  # Let's transpose the matrix to get a different view
 legend("topleft",
        names(classes_data),
        cex=0.8,
-       fill=heat.colors(3))
+       fill=c("grey", "red", "yellow"))
 # Add the legend. But it's not looking so good now. Is it?
 ```
 
@@ -382,7 +382,7 @@ par(xpd=T, mar=par()$mar+c(0,0,0,4))
 barplot(t(classes_data),
         main="Institute",
         ylab="Total Students", 
-        col=heat.colors(3),
+        col=c("grey", "red", "yellow"),
         space=0.1,
         cex.axis=0.8,
         las=1,
@@ -392,7 +392,7 @@ barplot(t(classes_data),
 legend(5.8, 30,
        names(classes_data),
        cex=0.8,
-       fill=heat.colors(3))
+       fill=c("grey", "red", "yellow"))
 # Now we can place the legend somewhere it won't cover the plot
 ```
 
@@ -408,7 +408,7 @@ par(xpd=T, mar=par()$mar+c(0,0,0,4))
 barplot(t(classes_data),
         main="Institute",
         ylab="Total Students", 
-        col=heat.colors(3),
+        col=c("grey", "red", "yellow"),
         space=0.1,
         cex.axis=0.8,
         las=1,
@@ -420,7 +420,7 @@ barplot(t(classes_data),
 legend(6, 30,
        names(classes_data),
        cex=0.8,
-       fill=heat.colors(3))
+       fill=c("grey", "red", "yellow"))
 ```
 
 ---
@@ -457,7 +457,7 @@ par(mfrow=c(1,2))
 barplot(t(classes_data),
         main="Institute",
         ylab="Total Students", 
-        col=heat.colors(3),
+        col=c("grey", "red", "yellow"),
         space=0.1,
         cex.axis=0.8,
         las=1,
