@@ -2,8 +2,8 @@
 
 # Data loading, basic statistics and plots
 # 2.
-male_chol = read.csv(url("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdDU5SnRoQ0xlZWhwRUZ6RFNQV042enc&output=csv"), header=TRUE, row.names=1)
-female_chol = read.csv(url("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdGJHcHZkSUdBcU56aS1OT3lLeU4tRHc&output=csv"), header=TRUE, row.names=1)
+male_chol = read.csv("https://gitlab.com/StuntsPT/bp2022/-/raw/master/docs/classes/exercises/TC_male.csv", header=TRUE, row.names=1)
+female_chol = read.csv("https://gitlab.com/StuntsPT/bp2022/-/raw/master/docs/classes/exercises/TC_female.csv", header=TRUE, row.names=1)
 
 # 3.
 male_means = apply(male_chol, 2, mean)
