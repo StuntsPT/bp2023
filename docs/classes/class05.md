@@ -80,12 +80,12 @@ When the goal is to make inferences regarding the population
 ### Shapiro test
 
 * &shy;<!-- .element: class="fragment"-->Tests for "normality"
-  * &shy;<!-- .element: class="fragment"-->H<sub>0</sub>: *This sample's value distribution is **not** significantly different from a normal distribution*
-  * &shy;<!-- .element: class="fragment"-->H<sub>1</sub>: *This sample's value distribution is significantly different from a normal distribution*
+  * &shy;<!-- .element: class="fragment"-->H<sub>0</sub>: *This dataset's value distribution is **not** significantly different from a normal distribution*
+  * &shy;<!-- .element: class="fragment"-->H<sub>1</sub>: *This dataset's value distribution is significantly different from a normal distribution*
 * &shy;<!-- .element: class="fragment"-->*p*-value is **below** our pre-determined *alpha* - H<sub>0</sub> is rejected:
-  * &shy;<!-- .element: class="fragment"-->H<sub>1</sub> is accepted - "Our data distribution is not 'normal'" - Non-parametric test
+  * &shy;<!-- .element: class="fragment"-->H<sub>1</sub> is accepted -> "Our data distribution has (statistically significant) differences from a 'normal' distribution." -> Non-parametric test
 * &shy;<!-- .element: class="fragment"-->*p*-value is **above** our pre-determined *alpha* - H<sub>0</sub> cannot be rejected:
-  * &shy;<!-- .element: class="fragment"-->H<sub>0</sub> is accepted - "Our data distribution is 'normal'" - Parametric test
+  * &shy;<!-- .element: class="fragment"-->H<sub>0</sub> is accepted -> "Our data distribution has no (statistically significant) differences from a 'normal' distribution." -> Parametric test
 
 ---
 
@@ -130,9 +130,24 @@ legend("topright", inset=.05, title="Distributions",
 ### Student's *t-test*
 
 * A *t-value* is obtained by comparing the two datasets
-* This value is compared to the tails of the distribution
+* &shy;<!-- .element: class="fragment" data-fragment-index="2" -->This value is compared to the tails of the distribution
 
-![norm. dist with alpha](C05_assets/alpha.png)
+<div style="float:left; width:50%">
+
+&shy;<!-- .element: class="fragment" data-fragment-index="1" -->`$$ t = {\overline{x_1} - \overline{x_2} \over \sqrt{s^2 ({1 \over n_1} + {1 \over n_2})}} $$`
+
+</div>
+<div style="float:right; width:50%">
+
+&shy;<!-- .element: class="fragment" data-fragment-index="2" -->![norm. dist with alpha](C05_assets/alpha.png)
+
+</div>
+
+<div style="float:left; width:50%">
+
+&shy;<!-- .element: class="fragment" data-fragment-index="1" -->Where *t* is the *t*-value; *x<sub>1</sub>* and *x<sub>2</sub>* are the means, *s²* is the pooled *std err* of<sub> </sub> both groups, and *n* is the number of<sub> </sub> observations
+
+</div>
 
 ---
 
@@ -159,7 +174,7 @@ legend("topright", inset=.05, title="Distributions",
 ### Single sample *t-test* example
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv")
 ph = diatoms[,"pH"]
 
 shapiro.test(ph)
@@ -219,11 +234,8 @@ Is the "Dissolved oxygen" different between Northern and Southern rivers?
 ### 2 samples *t-test* example
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
-north_rivers_doxy = diatoms[,"Doxy"][diatoms[,"Stream"] == "ER" | diatoms[,"Stream"] == "BR" | diatoms[,"Stream"] == "SR"]
-south_rivers_doxy = diatoms[,"Doxy"][diatoms[,"Stream"] == "AR" | diatoms[,"Stream"] == "CC" | diatoms[,"Stream"] == "SPR"]
+diatoms = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv")
 
-# Alternative:
 north_rivers_doxy = diatoms[diatoms[, "Stream"] == "ER" | diatoms[, "Stream"] == "BR" | diatoms[, "Stream"] == "SR", "Doxy"]
 south_rivers_doxy = diatoms[diatoms[, "Stream"] == "AR" | diatoms[, "Stream"] == "CC" | diatoms[, "Stream"] == "SPR", "Doxy"]
 
@@ -240,9 +252,10 @@ t.test(x=north_rivers_doxy, y=south_rivers_doxy)
 Is the "Alkalinity" different between Northern and Southern rivers?
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
-north_rivers_alk = diatoms[,"Alk"][diatoms[,"Stream"] == "ER" | diatoms[,"Stream"] == "BR" | diatoms[,"Stream"] == "SR"]
-south_rivers_alk = diatoms[,"Alk"][diatoms[,"Stream"] == "AR" | diatoms[,"Stream"] == "CC" | diatoms[,"Stream"] == "SPR"]
+diatoms = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv")
+
+north_rivers_alk = diatoms[diatoms[, "Stream"] == "ER" | diatoms[, "Stream"] == "BR" | diatoms[, "Stream"] == "SR", "Alk"]
+south_rivers_alk = diatoms[diatoms[, "Stream"] == "AR" | diatoms[, "Stream"] == "CC" | diatoms[, "Stream"] == "SPR", "Alk"]
 
 shapiro.test(north_rivers_alk)
 shapiro.test(south_rivers_alk)
@@ -269,10 +282,10 @@ If samples are not independent, a special variant must be used
 Has the rivers' pH changed significantly in the last 25 years?
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv")
 ph = diatoms[,"pH"]
 
-ph2017 = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/diatoms_ph_2017.csv"))[,"pH"]
+ph2017 = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/diatoms_ph_2017.csv")[,"pH"]
 
 shapiro.test(ph)
 shapiro.test(ph2017)
@@ -285,10 +298,10 @@ t.test(x=ph, y=ph2017, paired=TRUE)
 ### N-P equivalent - Paired Wilcoxon test
 
 ```R
-diatoms = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv"))
+diatoms = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/Dados_diatoms_heavymetals.csv")
 ph = diatoms[,"pH"]
 
-ph2017 = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/diatoms_ph_2017.csv"))[,"pH"]
+ph2017 = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C05_assets/diatoms_ph_2017.csv")[,"pH"]
 
 shapiro.test(ph)
 shapiro.test(ph2017)
