@@ -1,4 +1,4 @@
-## Exercises 1 possible solutions
+## Exercises 5 possible solutions
 
 # Data loading, basic statistics and plots
 # 2.
