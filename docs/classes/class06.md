@@ -225,12 +225,12 @@ if(!require("XNomial")){
         library("XNomial")
 	}
 
-	obsvd = c(4, 27, 12)
-	exptd = c(0.25, 0.5, 0.25)
+obsvd = c(4, 27, 12)
+exptd = c(0.25, 0.5, 0.25)
 
-	chisq.test(x=obsvd, p=exptd)
+chisq.test(x=obsvd, p=exptd)
 
-	xmulti(obs=obsvd, expr=exptd)
+xmulti(obs=obsvd, expr=exptd)
 ```
 
 ---
@@ -284,7 +284,11 @@ if(!require("XNomial")){
 
 ### The Null hypothesis
 
-"The variables' relative proportions are independent" <!-- .element: class="fragment" data-fragment-index="1" -->
+"Variable 1 and variable 2 **are not** related;<sub> </sub> Variable 1 proportions are the same for different values of variable 2."
+
+</br>
+
+Can be translated to -> "The variables' relative proportions are independent." <!-- .element: class="fragment" data-fragment-index="1" -->
 
 |||
 
@@ -320,7 +324,7 @@ colnames(side_effects_matrix) = c("No.side.effects",
 
 
 chisq.test(side_effects_matrix,
-           correct=TRUE)  # Corrections? Why?
+           correct=FALSE)  # Corrections? Why?
 ```
 
 ---
