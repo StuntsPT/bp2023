@@ -180,7 +180,7 @@ chisq.test(x=obsvd, p=exptd)
 
 p_vals = c()
 
-for (i in 1:length(obs)) {
+for (i in 1:length(obsvd)) {
     partial_obs = c(obsvd[i], sum(obsvd[-i]))
     partial_exp = c(exptd[i], sum(exptd[-i]))
     part_chisq = chisq.test(x=partial_obs, p=partial_exp)
