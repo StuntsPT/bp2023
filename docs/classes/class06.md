@@ -290,7 +290,7 @@ xmulti(obs=obsvd, expr=exptd)
 
 Can be translated to -> "The variables' relative proportions are independent." <!-- .element: class="fragment" data-fragment-index="1" -->
 
-|||
+---
 
 ### Chi² test of independence example
 
