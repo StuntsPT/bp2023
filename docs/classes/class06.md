@@ -317,7 +317,7 @@ side_effects_matrix = matrix(c(R1, R2),
                              nrow=2,
                              byrow=TRUE)
 
-# Naming is not mandatory:
+# Naming is not mandatory (but it looks nice!):
 rownames(side_effects_matrix) = c("Night", "Morning")
 colnames(side_effects_matrix) = c("No.side.effects",
                                   "Side.effects")
