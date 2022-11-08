@@ -1,4 +1,4 @@
-# Exercises 2 possible solutions
+# Exercises 6 possible solutions
 
 magic_beans = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/Magic_beans.csv"), header=TRUE, row.names=1)
 
@@ -31,11 +31,11 @@ barplot(height=colour_counts[, "Freq"],
 # Hypothesis tests
 # 2.1:
 colour_expectations = c(1/6, 1/6, 1/6, 1/6, 1/6 ,1/6)
-colour_observations = as.vector(colour_counts[, "Freq"])
+colour_observations = colour_counts[, "Freq"]
 chisq.test(x=colour_observations, p=colour_expectations)
 
-# H0: The obsrved colour distribution is not different from the expectation of 1:1:1:1:1:1.
-# The Chi² test indicates that there are significant deviations from the expected distribuition
+# H0: The observed colour distribution is not different from the expectation of 1:1:1:1:1:1.
+# The Chi² test indicates that there are significant deviations from the expected distribution
 
 # 2.2
 p_vals = c()
@@ -49,7 +49,7 @@ for (i in 1:length(colour_expectations)) {
     }
 
 q_values = p.adjust(p_vals, method="fdr")
-# According to the q-values, assuming alpha==0.05, only the green and blue beans are not significantly different from the expected porportion.
+# According to the q-values, assuming alpha==0.05, only the green and blue beans are not significantly different from the expected proportion.
 
 # 2.3
 if (!require("XNomial")) {
@@ -57,8 +57,7 @@ if (!require("XNomial")) {
     library("XNomial")
 }
 
-red_beans = table(magic_beans$Size.category[magic_beans$Colour == "Red"])
-# Alternative
+
 red_beans = table(magic_beans)["Red",]
 
 xmulti(obs=red_beans, expr=c(1/3,1/3,1/3))
@@ -74,7 +73,7 @@ obs=c(89, 322, 16)
 exp=c(5/21, 15/21, 1/21)
 
 binom.test(x=obs[1], n=sum(obs), p=exp[1], alternative="greater")
-# The proportion of tie fighters found aboard the Imperial Star Destroyer are not significantly different from what is expected for a ground strike.
+# The proportion of tie fighters found aboard the Imperial Star Destroyer are not significantly larger from what is expected for a ground strike.
 # The rebel base should deploy defenses to react to a ground assault.
 
 ## Regression
@@ -90,11 +89,13 @@ plot(x=faithful$eruptions,
 # 3.2
 shapiro.test(faithful$waiting)
 shapiro.test(faithful$eruptions)
-model = lm(waiting ~ eruptions, data=faithful)
+
+cor.test(faithful[,"waiting"], faithful[,"eruptions"], method = "spearman")
 summary(model)
-# The R-squared value is of 0.8115 (0.8108 adjusted) and the correlation is significant.
+# The rho value is of 0.778 and the correlation is significant.
 
 # 3.3
+model = lm(waiting ~ eruptions, data=faithful)
 intercept = model$coefficients["(Intercept)"]
 slope = model$coefficients["eruptions"]
 abline(intercept, slope, col="forestgreen", lwd=3)
@@ -105,7 +106,7 @@ abline(model, col="blue", lwd=3)
 ## Netflix Originals
 
 # 4.1
-netflix = read.csv("", row.names=1)
+netflix = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/NetflixOriginals.csv", row.names=1)
 
 # 4.2
 
