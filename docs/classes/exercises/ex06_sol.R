@@ -76,47 +76,20 @@ binom.test(x=obs[1], n=sum(obs), p=exp[1], alternative="greater")
 # The proportion of tie fighters found aboard the Imperial Star Destroyer are not significantly larger from what is expected for a ground strike.
 # The rebel base should deploy defenses to react to a ground assault.
 
-## Regression
-
-# 3.1
-plot(x=faithful$eruptions,
-     y=faithful$waiting,
-     col="brown",
-     ylab="waiting time (in seconds)",
-     xlab="eruption duration (in seconds)",
-     main="Geyser eruption duration Vs. interval before the eruption")
-
-# 3.2
-shapiro.test(faithful$waiting)
-shapiro.test(faithful$eruptions)
-
-cor.test(faithful[,"waiting"], faithful[,"eruptions"], method = "spearman")
-summary(model)
-# The rho value is of 0.778 and the correlation is significant.
-
-# 3.3
-model = lm(waiting ~ eruptions, data=faithful)
-intercept = model$coefficients["(Intercept)"]
-slope = model$coefficients["eruptions"]
-abline(intercept, slope, col="forestgreen", lwd=3)
-
-# Alternative
-abline(model, col="blue", lwd=3)
-
 ## Netflix Originals
 
-# 4.1
+# 3.1
 netflix = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/NetflixOriginals.csv", row.names=1)
 
-# 4.2
+# 3.2
 
 hist(netflix[,"IMDB.Score"])  # Need embellishment
 hist(netflix[,"Runtime"])  # Need embellishment
 
-# 4.3
+# 3.3
 plot(x=netflix[,"Runtime"], y=netflix[,"IMDB.Score"])  # Needs embellishment
 
-# 4.4
+# 3.4
 shapiro.test(netflix[,"IMDB.Score"])
 shapiro.test(netflix[,"Runtime"])
 
@@ -125,7 +98,7 @@ cor.test(x=netflix[,"Runtime"], y=netflix[,"IMDB.Score"], method ="spearman")
 # H0: The distribution of "Runtime" values is not significantly different from a normal distribution. (Rejected)
 # H0: As the values of "Runtime" increase, the values of "IMDB.Score" do not increase or decrease. (Not rejected)
 
-# 4.5
+# 3.5
 model = lm(IMDB.Score ~ Runtime, data=netflix)
 abline(model, lwd=2, col="red")
 
