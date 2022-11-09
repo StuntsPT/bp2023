@@ -324,7 +324,7 @@ legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
 * &shy;<!-- .element: class="fragment" -->One of the good things about R is it's expandability
 * &shy;<!-- .element: class="fragment" -->It is possible to "import" thousands of external 3rd party packages
 * &shy;<!-- .element: class="fragment" -->Bioconductor is more than just a package. It's a 3rd party package repository
-  * &shy;<!-- .element: class="fragment" -->It hosts ~~1473~~ ~~1649~~ ~~1823~~ ~~1974~~ 2042 bioinformatics related packages (at the time of writing)
+  * &shy;<!-- .element: class="fragment" -->It hosts ~~1473~~ ~~1649~~ ~~1823~~ ~~1974~~ ~~2042~~ 2143 bioinformatics related packages (at the time of writing)
   * &shy;<!-- .element: class="fragment" -->It is very easy to use directly from R
 
 ---
