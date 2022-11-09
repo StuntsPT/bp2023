@@ -87,7 +87,7 @@ hist(netflix[,"IMDB.Score"])  # Need embellishment
 hist(netflix[,"Runtime"])  # Need embellishment
 
 # 3.3
-plot(x=netflix[,"Runtime"], y=netflix[,"IMDB.Score"])  # Needs embellishment
+plot(x=netflix[,"Runtime"], y=netflix[,"IMDB.Score"], pch="N", col="#E50914", lwd=3)  # Needs embellishment
 
 # 3.4
 shapiro.test(netflix[,"IMDB.Score"])
@@ -100,6 +100,6 @@ cor.test(x=netflix[,"Runtime"], y=netflix[,"IMDB.Score"], method ="spearman")
 
 # 3.5
 model = lm(IMDB.Score ~ Runtime, data=netflix)
-abline(model, lwd=2, col="red")
+abline(model, lwd=4, col="black")
 
 
