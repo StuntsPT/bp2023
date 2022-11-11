@@ -72,7 +72,7 @@ If - else clause in "pseudocode"
 if (condition to assess) {
     do something
 } else {
-    do something else
+    do some other thing
 }
 ```
 
