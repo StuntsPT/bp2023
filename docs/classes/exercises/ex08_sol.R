@@ -21,19 +21,10 @@ significance = function(p_value, alpha) {
 print(significance(0.01, 0.05))
 print(significance(0.07, 0.05))
 
-# 1.3
-repeater = function(words) {
-    for (w in words) {
-        two_words = paste(w, w, sep=" ")
-        print(two_words)
-    }
-}
-
-repeater(c("Three", "Test", "Words"))
 
 # 2.1
-male_data = read.csv(url("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdDU5SnRoQ0xlZWhwRUZ6RFNQV042enc&output=csv"), header=TRUE, row.names=1)
-female_data = read.csv(url("http://docs.google.com/spreadsheet/pub?key=0ArfEDsV3bBwCdGJHcHZkSUdBcU56aS1OT3lLeU4tRHc&output=csv"), header=TRUE, row.names=1)
+male_data = read.csv("https://gitlab.com/StuntsPT/bp2022/-/raw/master/docs/classes/exercises/TC_male.csv", header=TRUE, row.names=1)
+female_data = read.csv(url("https://gitlab.com/StuntsPT/bp2022/-/raw/master/docs/classes/exercises/TC_female.csv"), header=TRUE, row.names=1)
 
 cholesterol_tests = function(male_chol, female_chol) {
     res = t.test(x=male_chol, y=female_chol)
@@ -50,17 +41,15 @@ for (i in c("X1980", "X1990", "X2000", "X2008")){
 print(p.adjust(p_values, method="fdr"))
 
 # 2.2
-looper = function (years) {
-    p_values = c()
-    for (i in years) {
-        p_val = cholesterol_tests(male_data[, i], female_data[, i])
-        p_values = c(p_values, p_val)
-    }
-    adj_pvals = p.adjust(p_values, method="fdr")
-    return(adj_pvals)
+years = c("X1983", "X1992", "X1998", "X2003", "X2005")
+p_values = c()
+for (i in years) {
+    p_val = cholesterol_tests(male_data[, i], female_data[, i])
+    p_values = c(p_values, p_val)
 }
+adj_pvals = p.adjust(p_values, method="fdr")
+print(adj_pvals)
 
-print(looper(c("X1983", "X1992", "X1998", "X2003", "X2005")))
 
 # 2.3
 # Yes!
@@ -86,7 +75,7 @@ diatoms_regression = function (x, y, file_name, xlab, ylab) {
     abline(regress, col="blue", lwd=3)
     dev.off()
 
-    return(c(cor_results$p.value, summary(regress)$r.squared))
+    return(c(cor_results$p.value, cor_results$estimate))
 }
 
 print(diatoms_regression(diatoms_data$Zn, diatoms_data$Diversity, "~/corrplot1.png", ylab="Species diversity", xlab="Zn concentration"))
