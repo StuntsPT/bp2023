@@ -240,3 +240,53 @@ axis(2, at=seq(0, max(fire_hp, water_hp, electric_hp, ice_hp, grass_hp), by=20))
 box()
 
 dev.off()
+
+# Alternative solution by Joana Rocha (2022-2023)
+# Automated, so come back here **after** learning about functions and for loops
+pokemons = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
+
+types = function(data, ycols1, ycols2, type) {
+  
+  cols = data[,ycols1] == type | data[,ycols2] == type
+  
+  return(cols) 
+  
+}
+
+type=c("Fire", "Water","Electric", "Ice", "Grass")
+my_dataframes = c()
+
+for (i in type ) {
+  
+  my_dataframes = cbind(my_dataframes, types(pokemons, "type1", "type2", i))
+  
+}
+
+
+poketype = function(data, xcols, main, colours) {
+  
+  cols = data[,xcols]
+  
+  plot = boxplot(cols[my_dataframes[,1]],cols[my_dataframes[,2]],cols[my_dataframes[,3]],cols[my_dataframes[,4]],cols[my_dataframes[,5]],
+                 col=colours,
+                 main=main,
+                 xlab=xcols,
+                 ylim=c(0,max(data[,xcols])),
+                 axes=F, notch=TRUE)
+  axis(1, at=1:5, labels=type)
+  axis(2,at=seq(0, max(cols), by=20),las=1)
+  box()
+  
+  return(plot) 
+  
+}
+
+stat= c("sp_attack", "sp_defense", "speed", "hp")
+colours= c("red4", "steelblue2", "yellow", "lightskyblue1", "palegreen")
+type=c("Fire", "Water","Electric", "Ice", "Grass")
+
+for (i in stat) {
+  
+  poketype(pokemons, i, "Different types", colours)
+  
+}
