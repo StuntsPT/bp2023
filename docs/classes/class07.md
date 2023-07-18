@@ -303,10 +303,10 @@ colnames(wine) <- c("Cultivar", "Alcohol", "Malic acid", "Ash",
 # The first column corresponds to the cultivar class
 cultivar_classes <- factor(wine$Cultivar)
 
-winePCA <- prcomp(scale(wine[,-1]))
-plot(winePCA$x[,1:2], col = cultivar_classes, main="PCA test plot")
-legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
-       col = c("black","red","green"))
+winePCA <- prcomp(scale(wine[, -1]))  # Note the `scale()` function
+plot(winePCA$x[, 1:2], col = cultivar_classes, main="PCA test plot")
+legend("bottomright", legend = c("Cv1", "Cv2", "Cv3"), pch = 1,
+       col = c("black", "red", "green"))
 ```
 
 ---
@@ -355,8 +355,8 @@ slplot(winePCAmethods,
        scol=cultivar_classes,
        scoresLoadings=c(TRUE,FALSE))
 
-legend("bottomright", legend = c("Cv1","Cv2","Cv3"), pch = 1,
-       col = c("black","red","green"))
+legend("bottomright", legend = c("Cv1", "Cv2", "Cv3"), pch = 1,
+       col = c("black", "red", "green"))
 
 slplot(winePCAmethods,
        scoresLoadings=c(FALSE,TRUE))
