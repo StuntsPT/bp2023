@@ -233,7 +233,7 @@ plot(hclust(dist(student_matrix),method="average"))
 Get the data and take a look at it.
 
 ```R
-student_df = read.csv("https://stuntspt.gitlab.io/bp2022/classes/C07_assets/students.csv",
+student_df = read.csv("https://stuntspt.gitlab.io/bp2023/classes/C07_assets/students.csv",
                       header=TRUE,
                       row.names=1,
                       sep=";")

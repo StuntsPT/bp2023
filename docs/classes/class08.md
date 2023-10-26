@@ -194,7 +194,7 @@ for (i in c(3:5)){
 
 [Now is a good chance to show github](https://github.com/StuntsPT/BP2022) <!-- .element: class="fragment" data-fragment-index="6" -->
 
-[Now is a good chance to show gitlab](https://gitlab.com/StuntsPT/bp2022) <!-- .element: class="fragment" data-fragment-index="6" -->
+[Now is a good chance to show gitlab](https://gitlab.com/StuntsPT/bp2023) <!-- .element: class="fragment" data-fragment-index="6" -->
 
 ---
 
@@ -352,5 +352,5 @@ sorteio = function(names_file, seed) {
     return(shuffled_names)
 }
 
-print(sorteio("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
+print(sorteio("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
 ```

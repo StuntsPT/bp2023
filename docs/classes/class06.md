@@ -493,7 +493,7 @@ Town                  State  Latitude  Species
 Data = read.table(textConnection(Input),header=TRUE)
 ```
 
-[Alternative](https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C06_assets/species_diversity.tsv)
+[Alternative](https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/C06_assets/species_diversity.tsv)
 
 |||
 
