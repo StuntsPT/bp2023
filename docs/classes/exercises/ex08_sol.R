@@ -23,8 +23,8 @@ print(significance(0.07, 0.05))
 
 
 # 2.1
-male_data = read.csv("https://gitlab.com/StuntsPT/bp2022/-/raw/master/docs/classes/exercises/TC_male.csv", header=TRUE, row.names=1)
-female_data = read.csv(url("https://gitlab.com/StuntsPT/bp2022/-/raw/master/docs/classes/exercises/TC_female.csv"), header=TRUE, row.names=1)
+male_data = read.csv("https://gitlab.com/StuntsPT/bp2023/-/raw/master/docs/classes/exercises/TC_male.csv", header=TRUE, row.names=1)
+female_data = read.csv(url("https://gitlab.com/StuntsPT/bp2023/-/raw/master/docs/classes/exercises/TC_female.csv"), header=TRUE, row.names=1)
 
 cholesterol_tests = function(male_chol, female_chol) {
     res = t.test(x=male_chol, y=female_chol)

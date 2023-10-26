@@ -96,7 +96,7 @@ dev.off()
 
 ## Pokedata Pt. 2
 # 1.
-pokedata = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
+pokedata = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
 
 max_hp = as.numeric(max(pokedata$hp))
 
@@ -243,7 +243,7 @@ dev.off()
 
 # Alternative solution by Joana Rocha (2022-2023)
 # Automated, so come back here **after** learning about functions and for loops
-pokemons = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
+pokemons = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
 
 types = function(data, ycols1, ycols2, type) {
   

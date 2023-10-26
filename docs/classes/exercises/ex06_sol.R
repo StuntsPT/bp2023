@@ -1,6 +1,6 @@
 # Exercises 6 possible solutions
 
-magic_beans = read.csv(url("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/Magic_beans.csv"), header=TRUE, row.names=1)
+magic_beans = read.csv(url("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/Magic_beans.csv"), header=TRUE, row.names=1)
 
 # Size category
 size_category_counts = data.frame(table(magic_beans[, "Size.category"]))
@@ -79,7 +79,7 @@ binom.test(x=obs[1], n=sum(obs), p=exp[1], alternative="greater")
 ## Netflix Originals
 
 # 3.1
-netflix = read.csv("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/exercises/NetflixOriginals.csv", row.names=1)
+netflix = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/NetflixOriginals.csv", row.names=1)
 
 # 3.2
 
