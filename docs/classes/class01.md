@@ -1,6 +1,6 @@
 ### Class #1
 
-#### Bioinformática Prática 2022
+#### Bioinformática Prática 2023
 
 <img src="C01_assets/logo-FCUL.png" style="background:none; border:none; box-shadow:none;">
 
