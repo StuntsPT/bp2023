@@ -4,9 +4,7 @@
 
 ![FCUL Logo](C01_assets/logo-FCUL.png)
 
-Francisco Pina Martins
-
-[@FPinaMartins](https://twitter.com/FPinaMartins)
+©Francisco Pina Martins 2017-2023
 
 ---
 
@@ -87,14 +85,14 @@ print("Good Morning World!")
 #### Variables
 
 ```R
-txt = "Good Morning World!"
-txt <- "Good Morning World!"  # "Old" syntax
+txt <- "Good Morning World!"  # "Classic" syntax
+txt = "Good Morning World!"  # Alternative
 print(txt)
 ```
 
 ---
 
-### Basic data types
+### "Basic" data types
 
 * Numeric (1.5) - AKA "Float" <!-- .element: class="fragment" data-fragment-index="1" -->
 * Integer (1) - these have to be coerced <!-- .element: class="fragment" data-fragment-index="2" -->
@@ -104,7 +102,7 @@ print(txt)
 
 |||
 
-### Basic data types
+### "Basic" data types
 
 ```R
 number = 1.5
@@ -115,11 +113,13 @@ class(number)
 
 ---
 
-### Advanced data types
+### "Advanced" data types
 
 #### Vector
 
-A **vector** is a **sequence** of data elements **of the same basic type**. Members in a vector are called "components". It is defined using `c()`:
+* &shy;<!-- .element: class="fragment" -->A **sequence** of data elements **of the same basic type**
+* &shy;<!-- .element: class="fragment" -->Members in a vector are called "components"
+* &shy;<!-- .element: class="fragment" -->Defined using `c()`:
 
 <div class="fragment">
 
@@ -137,7 +137,7 @@ c(TRUE, FALSE, TRUE)
 
 #### Vector
 
-We can perform a lot of operations on vectors:
+* &shy;<!-- .element: class="fragment" -->Support many different operations:
 
 <div class="fragment">
 
@@ -159,7 +159,7 @@ odd[2]  # Indexing
 
 #### Factor
 
-Factors are used for storing **categorical variables**.
+* &shy;<!-- .element: class="fragment" -->Used for storing **categorical variables**.
 
 ![Pokéball](C02_assets/pokeball.png)
 
@@ -178,7 +178,12 @@ captured_pokemon_types = levels(as.factor(captured_pokemon))
 
 #### Matrix
 
-A **matrix** is a collection of **data elements** arranged in a **two-dimensional rectangular layout**. It is defined using a `function`.
+* &shy;<!-- .element: class="fragment" -->Collection of **data elements**
+    * &shy;<!-- .element: class="fragment" -->Arranged in a **two-dimensional rectangular layout**
+* &shy;<!-- .element: class="fragment" -->Defined using a `function`.
+
+<div class="fragment">
+
 
 ```R
 my_matrix = matrix(c(1, 2, 3, 4, 5, 6),  # data elements
@@ -191,13 +196,17 @@ my_matrix[1,]  # Get a single row
 my_matrix[,1]  # Get a single column
 ```
 
+</div>
+
 ---
 
 ### Advanced data types
 
 #### List
 
-A list is a generic vector containing other objects
+* &shy;<!-- .element: class="fragment" -->A *generic* vector containing other objects
+
+<div class="fragment">
 
 ```R
 n = c(2, 3, 5) 
@@ -206,13 +215,18 @@ b = c(TRUE, FALSE, TRUE, FALSE, FALSE)
 x = list(n, s, b, 3)  # x contains copies of n, s, b 
 ```
 
+</div>
+
 ---
 
 ### Advanced data types
 
 #### Data Frame
 
-A **data frame** is used for storing data tables. It is a set of vectors of equal length.
+* &shy;<!-- .element: class="fragment" -->A set of vectors of equal length
+* &shy;<!-- .element: class="fragment" -->Used for storing data tables
+
+<div class="fragment">
 
 ```R
 n = c(2, 3, 5) 
@@ -220,6 +234,8 @@ s = c("aa", "bb", "cc")
 b = c(TRUE, FALSE, TRUE) 
 dframe = data.frame(n, s, b)  # dframe is a data frame 
 ```
+
+</div>
 
 |||
 
@@ -246,8 +262,11 @@ mtcars["am"]  # Calling it like this will get the names too
 mtcars[1, ]  # Get row 1
 mtcars["Mazda RX4", ]
 
-mtcars[, "mpg"] <= 15  # Logical indexing!!!111!!one
+# Logical indexing!!!111!!one
+mtcars[, "mpg"] <= 15
 
+# Rows and columns can be combined:
+mtcars["Maxda RX4", mpg]  # The Japenese car's fuel consumption
 mtcars[mtcars[, "cyl"] == 6, ]  # Can you guess what this does?
 ```
 
@@ -255,7 +274,11 @@ mtcars[mtcars[, "cyl"] == 6, ]  # Can you guess what this does?
 
 ### Functions
 
-R functions are invoked by its **name**, then followed by the parenthesis, and zero or more arguments.
+* &shy;<!-- .element: class="fragment" -->Invoked by their **name**
+    * &shy;<!-- .element: class="fragment" -->Followed by parenthesis `()`
+        * &shy;<!-- .element: class="fragment" -->Containing zero or more arguments
+
+<div class="fragment">
 
 ```R
 c(1, 2, 3)  # `c` actually stands for "combine"
@@ -268,7 +291,9 @@ seq(10, 30)  # Create a sequence (start, end, [step])
 seq(10, 30, 2)  # See "step" in action
 ```
 
-* We can also define our own functions. More on that later. <!-- .element: class="fragment" data-fragment-index="1" -->
+</div>
+
+* &shy;<!-- .element: class="fragment" -->We can also define our own functions. More on that later
 
 |||
 
