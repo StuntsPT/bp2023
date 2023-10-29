@@ -8,7 +8,7 @@
 
 ---
 
-![GUN R Logo](C02_assets/R_logo.png)
+![GNU R Logo](C02_assets/R_logo.png)
 
 [GNU R](https://www.r-project.org/)
 
@@ -406,5 +406,10 @@ data = read.table("https://some.site.with.data.com/datafile.txt", header=TRUE, s
 
 ---
 
-# Break time!
+### References
+
+* [GNU R](https://www.r-project.org/)
+* [RStudio](https://posit.co/products/open-source/rstudio/)
+* [Advanced R: Data structures](http://adv-r.had.co.nz/Data-structures.html)
+* [The Comprehensive R Archive Network](https://cran.r-project.org/)
 
