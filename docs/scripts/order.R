@@ -9,4 +9,4 @@ sorteio = function(names_file, seed) {
   return(shuffled_names)
 }
 
-print(sorteio("https://gitlab.com/StuntsPT/bp2022/raw/master/docs/classes/C01_assets/nomes.txt", 3728194))
+print(sorteio("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/C01_assets/nomes.txt", 73892))
