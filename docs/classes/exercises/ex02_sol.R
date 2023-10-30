@@ -18,7 +18,7 @@ diatoms_data[diatoms_data[, "Stream"] == "SR", ]
 ## 3. Online data
 
 # 3.1
-pokedata = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t", row.names=2)
+pokedata = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep=",", row.names=2)
 
 # 3.2
 View(pokedata)
