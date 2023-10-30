@@ -247,7 +247,7 @@ plot_colors <- c("gray","red","orange")
 
 figure_path = "~/figure.png"
 
-png(filename=figure_path, height=295, width=300, 
+png(filename=figure_path, height=1000, width=1000, 
     bg="white")
 # In order to save a plot we first need to tell R some information
 # Can you tell what each option does?
