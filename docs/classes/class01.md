@@ -36,11 +36,11 @@
 
 **3ª semana**
 
+* 13-11-2023 – **Apresentações**
 * 14-11-2023 – **Apresentações**
-* 15-11-2023 – **Apresentações**
-* 16-11-2023 – Revisões (14-16h) - Seminário
-* 17-11-2023 – Exercícios
-* 18-11-2023 – **Exame TP**
+* 15-11-2023 – Revisões (14-16h) - Seminário
+* 16-11-2023 – Exercícios
+* 17-11-2023 – **Exame TP**
 
 ---
 
