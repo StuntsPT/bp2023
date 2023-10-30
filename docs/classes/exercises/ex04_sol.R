@@ -96,7 +96,7 @@ dev.off()
 
 ## Pokedata Pt. 2
 # 1.
-pokedata = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
+pokedata = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep=",")
 
 max_hp = as.numeric(max(pokedata$hp))
 
@@ -156,11 +156,11 @@ dev.off()
 
 # 3.
 
-fire_sp_attack = pokedata[pokedata$type1 == "Fire" | pokedata$type2 == "Fire", "sp_attack"]
-water_sp_attack = pokedata[pokedata$type1 == "Water" | pokedata$type2 == "Water", "sp_attack"]
-electric_sp_attack = pokedata[pokedata$type1 == "Electric" | pokedata$type2 == "Electric", "sp_attack"]
-ice_sp_attack = pokedata[pokedata$type1 == "Ice" | pokedata$type2 == "Ice", "sp_attack"]
-grass_sp_attack = pokedata[pokedata$type1 == "Grass" | pokedata$type2 == "Grass", "sp_attack"]
+fire_sp_attack = pokedata[pokedata[,"type1"] == "Fire" | pokedata[,"type2"] == "Fire", "sp_attack"]
+water_sp_attack = pokedata[pokedata[,"type1"] == "Water" | pokedata[,"type2"] == "Water", "sp_attack"]
+electric_sp_attack = pokedata[pokedata[,"type1"] == "Electric" | pokedata[,"type2"] == "Electric", "sp_attack"]
+ice_sp_attack = pokedata[pokedata[,"type1"] == "Ice" | pokedata[,"type2"] == "Ice", "sp_attack"]
+grass_sp_attack = pokedata[pokedata[,"type1"] == "Grass" | pokedata[,"type2"] == "Grass", "sp_attack"]
 
 png(filename="~/Sp.Attack_by_type.png", height=1000, width=1200)
 
@@ -183,11 +183,11 @@ png(filename="~/Sp.Attack_by_type.png", height=2000, width=2400)
 
 par(mfrow=c(2,2))
 
-fire_sp_attack = pokedata[pokedata$type1 == "Fire" | pokedata$type2 == "Fire", "sp_attack"]
-water_sp_attack = pokedata[pokedata$type1 == "Water" | pokedata$type2 == "Water", "sp_attack"]
-electric_sp_attack = pokedata[pokedata$type1 == "Electric" | pokedata$type2 == "Electric", "sp_attack"]
-ice_sp_attack = pokedata[pokedata$type1 == "Ice" | pokedata$type2 == "Ice", "sp_attack"]
-grass_sp_attack = pokedata[pokedata$type1 == "Grass" | pokedata$type2 == "Grass", "sp_attack"]
+fire_sp_attack = pokedata[pokedata[,"type1"] == "Fire" | pokedata[,"type2"] == "Fire", "sp_attack"]
+water_sp_attack = pokedata[pokedata[,"type1"] == "Water" | pokedata[,"type2"] == "Water", "sp_attack"]
+electric_sp_attack = pokedata[pokedata[,"type1"] == "Electric" | pokedata[,"type2"] == "Electric", "sp_attack"]
+ice_sp_attack = pokedata[pokedata[,"type1"] == "Ice" | pokedata[,"type2"] == "Ice", "sp_attack"]
+grass_sp_attack = pokedata[pokedata[,"type1"] == "Grass" | pokedata[,"type2"] == "Grass", "sp_attack"]
 
 boxplot(fire_sp_attack, water_sp_attack, electric_sp_attack, ice_sp_attack, grass_sp_attack,
         ylab="Sp. Attack", xlab="Pokemon type",
@@ -197,11 +197,11 @@ axis(1, at=1:5, labels=c("Fire", "Water", "Electric", "Ice", "Grass"))
 axis(2, at=seq(0, max(fire_sp_attack, water_sp_attack, electric_sp_attack, ice_sp_attack, grass_sp_attack), by=20))
 box()
 
-fire_sp_def = pokedata[pokedata$type1 == "Fire" | pokedata$type2 == "Fire", "sp_defense"]
-water_sp_def = pokedata[pokedata$type1 == "Water" | pokedata$type2 == "Water", "sp_defense"]
-electric_sp_def = pokedata[pokedata$type1 == "Electric" | pokedata$type2 == "Electric", "sp_defense"]
-ice_sp_def = pokedata[pokedata$type1 == "Ice" | pokedata$type2 == "Ice", "sp_defense"]
-grass_sp_def = pokedata[pokedata$type1 == "Grass" | pokedata$type2 == "Grass", "sp_defense"]
+fire_sp_def = pokedata[pokedata[,"type1"] == "Fire" | pokedata[,"type2"] == "Fire", "sp_defense"]
+water_sp_def = pokedata[pokedata[,"type1"] == "Water" | pokedata[,"type2"] == "Water", "sp_defense"]
+electric_sp_def = pokedata[pokedata[,"type1"] == "Electric" | pokedata[,"type2"] == "Electric", "sp_defense"]
+ice_sp_def = pokedata[pokedata[,"type1"] == "Ice" | pokedata[,"type2"] == "Ice", "sp_defense"]
+grass_sp_def = pokedata[pokedata[,"type1"] == "Grass" | pokedata[,"type2"] == "Grass", "sp_defense"]
 
 boxplot(fire_sp_def, water_sp_def, electric_sp_def, ice_sp_def, grass_sp_def,
         ylab="Sp. Defense", xlab="Pokemon type",
@@ -211,11 +211,11 @@ axis(1, at=1:5, labels=c("Fire", "Water", "Electric", "Ice", "Grass"))
 axis(2, at=seq(0, max(fire_sp_def, water_sp_def, electric_sp_def, ice_sp_def, grass_sp_def), by=20))
 box()
 
-fire_speed = pokedata[pokedata$type1 == "Fire" | pokedata$type2 == "Fire", "speed"]
-water_speed = pokedata[pokedata$type1 == "Water" | pokedata$type2 == "Water", "speed"]
-electric_speed = pokedata[pokedata$type1 == "Electric" | pokedata$type2 == "Electric", "speed"]
-ice_speed = pokedata[pokedata$type1 == "Ice" | pokedata$type2 == "Ice", "speed"]
-grass_speed = pokedata[pokedata$type1 == "Grass" | pokedata$type2 == "Grass", "speed"]
+fire_speed = pokedata[pokedata[,"type1"] == "Fire" | pokedata[,"type2"] == "Fire", "speed"]
+water_speed = pokedata[pokedata[,"type1"] == "Water" | pokedata[,"type2"] == "Water", "speed"]
+electric_speed = pokedata[pokedata[,"type1"] == "Electric" | pokedata[,"type2"] == "Electric", "speed"]
+ice_speed = pokedata[pokedata[,"type1"] == "Ice" | pokedata[,"type2"] == "Ice", "speed"]
+grass_speed = pokedata[pokedata[,"type1"] == "Grass" | pokedata[,"type2"] == "Grass", "speed"]
 
 boxplot(fire_speed, water_speed, electric_speed, ice_speed, grass_speed,
         ylab="Speed", xlab="Pokemon type",
@@ -225,11 +225,11 @@ axis(1, at=1:5, labels=c("Fire", "Water", "Electric", "Ice", "Grass"))
 axis(2, at=seq(0, max(fire_speed, water_speed, electric_speed, ice_speed, grass_speed), by=20))
 box()
 
-fire_hp = pokedata[pokedata$type1 == "Fire" | pokedata$type2 == "Fire", "hp"]
-water_hp = pokedata[pokedata$type1 == "Water" | pokedata$type2 == "Water", "hp"]
-electric_hp = pokedata[pokedata$type1 == "Electric" | pokedata$type2 == "Electric", "hp"]
-ice_hp = pokedata[pokedata$type1 == "Ice" | pokedata$type2 == "Ice", "hp"]
-grass_hp = pokedata[pokedata$type1 == "Grass" | pokedata$type2 == "Grass", "hp"]
+fire_hp = pokedata[pokedata[,"type1"] == "Fire" | pokedata[,"type2"] == "Fire", "hp"]
+water_hp = pokedata[pokedata[,"type1"] == "Water" | pokedata[,"type2"] == "Water", "hp"]
+electric_hp = pokedata[pokedata[,"type1"] == "Electric" | pokedata[,"type2"] == "Electric", "hp"]
+ice_hp = pokedata[pokedata[,"type1"] == "Ice" | pokedata[,"type2"] == "Ice", "hp"]
+grass_hp = pokedata[pokedata[,"type1"] == "Grass" | pokedata[,"type2"] == "Grass", "hp"]
 
 boxplot(fire_hp, water_hp, electric_hp, ice_hp, grass_hp,
         ylab="HP", xlab="Pokemon type",
@@ -243,7 +243,7 @@ dev.off()
 
 # Alternative solution by Joana Rocha (2022-2023)
 # Automated, so come back here **after** learning about functions and for loops
-pokemons = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep="\t")
+pokemons = read.csv("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/exercises/poke_data.csv", header=TRUE, sep=",")
 
 types = function(data, ycols1, ycols2, type) {
   
