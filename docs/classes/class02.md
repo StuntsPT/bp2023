@@ -266,7 +266,7 @@ mtcars["Mazda RX4", ]
 mtcars[, "mpg"] <= 15
 
 # Rows and columns can be combined:
-mtcars["Maxda RX4", mpg]  # The Japenese car's fuel consumption
+mtcars["Mazda RX4", "mpg"]  # The Japenese car's fuel consumption
 mtcars[mtcars[, "cyl"] == 6, ]  # Can you guess what this does?
 ```
 
