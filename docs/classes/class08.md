@@ -4,7 +4,6 @@
 
 ![Logo FCUL](C01_assets/logo-FCUL.png)
 
-Francisco Pina Martins
 
 ©Francisco Pina Martins 2017-2023
 
