@@ -232,7 +232,7 @@ legend(1, max_y,
 
 ```
 
-[Alternate link](https://raw.githubusercontent.com/StuntsPT/BP2022/master/docs/classes/C04_assets/classes_data.txt)
+[Alternate link](https://raw.githubusercontent.com/StuntsPT/BP2023/master/docs/classes/C04_assets/classes_data.txt)
 
 |||
 
