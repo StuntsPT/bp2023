@@ -82,9 +82,9 @@ When the goal is to make inferences regarding the population
   * &shy;<!-- .element: class="fragment"-->H<sub>0</sub>: *This dataset's value distribution is **not** significantly different from a normal distribution*
   * &shy;<!-- .element: class="fragment"-->H<sub>1</sub>: *This dataset's value distribution is significantly different from a normal distribution*
 * &shy;<!-- .element: class="fragment"-->*p*-value is **below** our pre-determined *alpha* - H<sub>0</sub> is rejected:
-  * &shy;<!-- .element: class="fragment"-->H<sub>1</sub> is accepted -> "Our data distribution has (statistically significant) differences from a 'normal' distribution." -> Non-parametric test
+  * &shy;<!-- .element: class="fragment"-->H<sub>1</sub> is accepted -> "Our data distribution has (statistically significant) differences from a normal distribution." -> Non-parametric test
 * &shy;<!-- .element: class="fragment"-->*p*-value is **above** our pre-determined *alpha* - H<sub>0</sub> cannot be rejected:
-  * &shy;<!-- .element: class="fragment"-->H<sub>0</sub> is accepted -> "Our data distribution has no (statistically significant) differences from a 'normal' distribution." -> Parametric test
+  * &shy;<!-- .element: class="fragment"-->H<sub>0</sub> is accepted -> "Our data distribution has no (statistically significant) differences from a normal distribution." -> Parametric test
 
 ---
 
