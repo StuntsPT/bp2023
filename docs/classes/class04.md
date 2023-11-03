@@ -144,7 +144,7 @@ title(xlab="Days", col.lab="darkgreen")
 title(ylab="Students", col.lab="darkgreen")
 
 legend(1, st_range[2],  # We're important!
-       c("charles","scott"),
+       c("Charles","Scott"),
        cex=0.8, 
        col=c("gray","red"),
        pch=c(4,22), lty=c(1,2))
@@ -181,7 +181,7 @@ title(xlab="Days", col.lab="darkgreen")
 title(ylab="Students", col.lab="darkgreen")
 
 legend(1, st_range[2],
-       c("charles","scott"),
+       c("Charles","Scott"),
        cex=0.8, 
        col=c("gray","red"),
        pch=c(4,22), lty=c(1,2))
@@ -290,7 +290,7 @@ dev.off()
   * &shy;<!-- .element: class="fragment" -->`title()` allows for changing the title, subtitle and add axis labels
   * &shy;<!-- .element: class="fragment" -->`axis()` allows for axes manipulations
   * &shy;<!-- .element: class="fragment" -->`legend()` adds a legend to the plot
-* &shy;<!-- .element: class="fragment" -->`dev_off()` will end it
+* &shy;<!-- .element: class="fragment" -->`dev.off()` will end it
 
 ---
 
