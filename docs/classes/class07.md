@@ -220,6 +220,36 @@ plot(hclust(dist(student_matrix),method="average"))
 
 ---
 
+### PCAs can be performed in "plain" R, but let's take it up a notch
+
+#### Introducing <!-- .element: class="fragment" data-fragment-index="1" --> 
+
+[BioConductor](https://bioconductor.org/) <!-- .element: class="fragment" data-fragment-index="1" -->
+
+|||
+
+### When "vanilla" R just isn't enough
+
+* &shy;<!-- .element: class="fragment" -->One of the good things about R is it's expandability
+* &shy;<!-- .element: class="fragment" -->It is possible to "import" thousands of external 3rd party packages
+* &shy;<!-- .element: class="fragment" -->Bioconductor is more than just a package. It's a 3rd party package repository
+  * &shy;<!-- .element: class="fragment" -->It hosts ~~1473~~ ~~1649~~ ~~1823~~ ~~1974~~ ~~2042~~ ~~2143~~ 2266 bioinformatics related packages (at the time of writing)
+  * &shy;<!-- .element: class="fragment" -->It is very easy to use directly from R
+
+---
+
+### Trying out "pcaMethods" package
+
+* Install and load the new library
+
+```R
+install.packages("BiocManager")
+BiocManager::install("pcaMethods")
+library(pcaMethods)
+```
+
+---
+
 ### Improved showtime
 
 * Let's get back to our students' example:
@@ -243,22 +273,44 @@ View(student_df)
 
 ### Showtime!
 
+Let's look at our student's grades using PCA
+
+```R
+library(pcaMethods)
+
+# Calculate the PCA
+studentPCA = pca(student_df[,1:4], scale="vector", center=T, nPcs=2, method="svd")  # Why not the entire DF?
+
+# Get the scores
+scores_pc1 = studentPCA@scores[, "PC1"]
+scores_pc2 = studentPCA@scores[, "PC2"]
+
+# Draw the plot
+plot(scores_pc1, scores_pc2, main="Student grades' PCA plot")
+
+# Optionally label each point
+text(scores_pc1, scores_pc2, rownames(student_df), pos= 3 )
+```
+
+|||
+
+### Showtime!
+
+Let's add some color!
 Using the "Universe" as the discriminant
 
 ```R
-# Calculate the PCA
-studentPCA = prcomp(student_df[,1:4])  # Why not the entire DF?
-
 # Define colours for the "Universe" grouping
 my_categories = unique(student_df[,"Universe"])
 universe_colours = as.numeric(factor(student_df[,"Universe"],
                                      levels=my_categories))
 
-# Draw the plot
-plot(studentPCA$x[,1:2], main="PCA student plot", col=universe_colours)
+# Draw the plot again
+plot(scores_pc1, scores_pc2, main="Student grades' PCA plot",
+     col=universe_colours)
 
 # Optionally label each point
-text(studentPCA$x[,1], studentPCA$x[,2], rownames(student_df), pos= 3 )
+text(scores_pc1, scores_pc2, rownames(student_df), pos= 3 )
 
 # Draw a nice looking legend
 legend("topright", legend=my_categories, pch = 1,
@@ -269,16 +321,18 @@ legend("topright", legend=my_categories, pch = 1,
 
 ### Showtime!
 
+Lets try again
 Using the "Category" as the discriminant
 
 ```R
-# Next, do the same, but for another discriminant
+# Do the same, but for another discriminant
 my_categories = unique(student_df[,"Category"])
 category_colours = as.numeric(factor(student_df[,"Category"],
                                      levels=my_categories))
 
-plot(studentPCA$x[,1:2], main="PCA student plot", col=category_colours)
-text(studentPCA$x[,1], studentPCA$x[,2], rownames(student_df), pos= 3 )
+plot(scores_pc1, scores_pc2, main="Student grades' PCA plot",
+     col=category_colours)
+text(scores_pc1, scores_pc2, rownames(student_df), pos= 3 )
 
 legend("topright", legend=my_categories, pch = 1,
        col=unique(category_colours))
@@ -289,6 +343,7 @@ legend("topright", legend=my_categories, pch = 1,
 ### Let's scale things up...
 
 ```R
+library(pcaMethods)
 # Get some data
 wine <- read.csv("http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data", sep=",")
 
@@ -302,74 +357,54 @@ colnames(wine) <- c("Cultivar", "Alcohol", "Malic acid", "Ash",
 # The first column corresponds to the cultivar class
 cultivar_classes <- factor(wine$Cultivar)
 
-winePCA <- prcomp(scale(wine[, -1]))  # Note the `scale()` function
-plot(winePCA$x[, 1:2], col = cultivar_classes, main="PCA test plot")
+winePCA <- pca(wine[, -1], scale="vector", center=T, nPcs=2, method="svd" )
+
+scores_pc1 = winePCA@scores[, "PC1"]
+scores_pc2 = winePCA@scores[, "PC2"]
+
+plot(scores_pc1, scores_pc2,
+     col=cultivar_classes,
+     main="Wine PCA plot")
 legend("bottomright", legend = c("Cv1", "Cv2", "Cv3"), pch = 1,
        col = c("black", "red", "green"))
 ```
 
----
-
-### PCAs can take us further, but not in "plain" R
-
-#### Introducing <!-- .element: class="fragment" data-fragment-index="1" --> 
-
-[BioConductor](https://bioconductor.org/) <!-- .element: class="fragment" data-fragment-index="1" -->
-
 |||
 
-### When "vanilla" R just isn't enough
+### Squeeze more information!
 
-* &shy;<!-- .element: class="fragment" -->One of the good things about R is it's expandability
-* &shy;<!-- .element: class="fragment" -->It is possible to "import" thousands of external 3rd party packages
-* &shy;<!-- .element: class="fragment" -->Bioconductor is more than just a package. It's a 3rd party package repository
-  * &shy;<!-- .element: class="fragment" -->It hosts ~~1473~~ ~~1649~~ ~~1823~~ ~~1974~~ ~~2042~~ 2143 bioinformatics related packages (at the time of writing)
-  * &shy;<!-- .element: class="fragment" -->It is very easy to use directly from R
-
----
-
-### Trying out "pcaMethods" package
-
-* Easy to use PCA extensions
-* First we import the new package
+We can add the percentage of explained variation:
 
 ```R
-install.packages("BiocManager")
-BiocManager::install("pcaMethods")
-library(pcaMethods)
-```
+plot(scores_pc1, scores_pc2,
+     col=cultivar_classes,
+     ann=FALSE)
 
-|||
-
-### Trying out "pcaMethods" package
-
-Next we calculate the PCA and plot it
-
-```R
-# Calculate PCA
-winePCAmethods = pca(wine[,-1], scale="vector", center=T, nPcs=2, method="svd")
-
-# Plot it
-slplot(winePCAmethods,
-       scol=cultivar_classes,
-       scoresLoadings=c(TRUE,FALSE))
+title(main="Wine PCA plot")
+title(xlab=sprintf("PC1 %0.1f%% variation explained", round(winePCA@R2[1] * 100, 2)))
+title(ylab=sprintf("PC2 %0.1f%% variation explained", round(winePCA@R2[2] * 100, 2)))
 
 legend("bottomright", legend = c("Cv1", "Cv2", "Cv3"), pch = 1,
        col = c("black", "red", "green"))
-
-slplot(winePCAmethods,
-       scoresLoadings=c(FALSE,TRUE))
 ```
 
 |||
 
-### Trying out "pcaMethods" package
+### How are variables influencing each PC?
 
-Let's squeeze a little more information
+A "Loadings plot" will allow us to check that
 
 ```R
-str(winePCAmethods) # slots are marked with @
-winePCAmethods@R2
+loadings_pc1 = winePCA@loadings[, "PC1"]
+loadings_pc2 = winePCA@loadings[, "PC2"]
+plot(loadings_pc1, loadings_pc2, pch="", ann=F)
+arrows(0, 0, loadings_pc1, loadings_pc2)
+
+text(loadings_pc1, loadings_pc2,
+     rownames(winePCA@loadings), cex=0.9)
+title(xlab=sprintf("PC1 %0.1f%% variation explained", round(winePCA@R2[1] * 100, 2)))
+title(ylab=sprintf("PC2 %0.1f%% variation explained", round(winePCA@R2[2] * 100, 2)))
+title(main="Wine PCA loadings plot")
 ```
 
 [Source](https://www.r-bloggers.com/principal-component-analysis-in-r/)
