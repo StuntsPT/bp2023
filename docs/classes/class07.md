@@ -196,7 +196,7 @@ plot(hclust(dist(student_matrix),method="average"))
 * "**P**rincipal **C**omponent **A**nalysis"
 * An exploratory method <!-- .element: class="fragment" data-fragment-index="1" -->
 * A dimensional reduction technique <!-- .element: class="fragment" data-fragment-index="2" -->
-* A way to cluster data from large, complex, datasets <!-- .element: class="fragment" data-fragment-index="3" -->
+* A way to explore data from large, complex, datasets <!-- .element: class="fragment" data-fragment-index="3" -->
 
 ---
 
