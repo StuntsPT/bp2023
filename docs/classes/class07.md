@@ -15,7 +15,6 @@
 
 ### Measuring distance
 
-* &shy;<!-- .element: class="fragment" data-fragment-index="1"-->Exploratory analyses are about this
 * &shy;<!-- .element: class="fragment" data-fragment-index="2"-->Samples have lots of traits
   * &shy;<!-- .element: class="fragment" data-fragment-index="3"-->How far apart are they?
 * &shy;<!-- .element: class="fragment" data-fragment-index="4"-->Let's start simple
