@@ -168,7 +168,7 @@ student_matrix = as.matrix(read.table(textConnection(students),
                            row.names=1))
 
 triang_students = dist(student_matrix)
-students_cluster = hclust(triang_students ,method="average")
+students_cluster = hclust(triang_students, method="average")
 plot(students_cluster)
 
 # Alternative:
