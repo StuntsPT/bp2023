@@ -300,7 +300,7 @@ dev.off()
 ### Automating a common task
 
 ```R
-army_size = function(sampleA, sampleB, alpha, pair=FALSE) {
+generic_test = function(sampleA, sampleB, alpha, pair=FALSE) {
   # Tests if there are significant differences between two samples.
   # Chooses the correct test based on each sample's normality.
   # Takes the two samples (vectors), an alpha value (numeric)
@@ -335,9 +335,10 @@ soif_data = read.csv("https://raw.githubusercontent.com/chrisalbon/war_of_the_fi
                      header=TRUE,
                      row.names=1)
 
-my_answer <- army_size(soif_data[,"attacker_size"], soif_data[,"defender_size"], 0.05)
+my_answer <- generic_test(soif_data[,"attacker_size"], soif_data[,"defender_size"], 0.05)
 print("H0: there are no significant differences between attacker army size and defending army size.")
 print(my_answer)
+
 ```
 
 ---
