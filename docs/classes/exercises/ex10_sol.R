@@ -67,10 +67,10 @@ obs=c(7,15,1,6,10,2,18,9)
 
 binom.test(x=obs[2], n=sum(obs), p=exp[2]/sum(exp), alternative="greater")
 
-# H0: The number of "Mimbulus mimbletoina" specimens in the greenhouse is not not significantly greater than what is expectd based on the records.
-# Since H0 is rejected, that means that the number of "Mimbulus mimbletoina" in the greenhouse is significnatly greater than what should be expected
+# H0: The number of "Mimbulus mimbletoina" specimens in the greenhouse is not not significantly greater than what is expected based on the records.
+# Since H0 is rejected, that means that the number of "Mimbulus mimbletoina" in the greenhouse is significantly greater than what should be expected
 # and therefore it may be indicated as a possible cause for the incident.
-# Neville, we are all looking at you and yout plants...
+# Neville, we are all looking at you and your plants...
 
 # 2.1
 malaria_corr = function(deaths, cases, save_path) {
@@ -145,27 +145,42 @@ install.packages("BiocManager")
 BiocManager::install("pcaMethods")
 library(pcaMethods)
 
-community_data = read.csv("https://datastore.landcareresearch.co.nz/dataset/43d27a6e-544a-4134-b19f-12c78e6a5652/resource/aa238833-e9e8-4ac1-8ba7-ae2737e0f7f3/download/april-dvp.csv", header=TRUE, sep=",")
+community_data = read.csv("https://gitlab.com/StuntsPT/bp2023/-/raw/master/docs/classes/exercises/april-dvp.csv", header=TRUE, sep=",")
 plant_traits_data = community_data[,7:length(community_data)]
 discriminant = community_data[,6]
 
 plant_pca <- pca(plant_traits_data, scale="vector", center=TRUE, nPcs=2, method="nipals")
 
-slplot(plant_pca,
-       scol=factor(discriminant),
-       scoresLoadings=c(TRUE,FALSE))
+scores_pc1 = plant_pca@scores[, "PC1"]
+scores_pc2 = plant_pca@scores[, "PC2"]
+
+plot(scores_pc1, scores_pc2,
+     col=factor(discriminant),
+     ann=FALSE)
+
+title(main="PCA scores plot from Alberta grassland plant data")
+title(xlab=sprintf("PC1 %0.1f%% variation explained", round(plant_pca@R2[1] * 100, 2)))
+title(ylab=sprintf("PC2 %0.1f%% variation explained", round(plant_pca@R2[2] * 100, 2)))
+
 legend("bottomright", legend=unique(discriminant), col=unique(factor(discriminant)), pch=1)
 
 # 3.2
 # The segregation by "base grass" suggests a split between Rye and TF individuals.
 
 # 3.3
-slplot(plant_pca,
-       scol=factor(discriminant),
-       scoresLoadings=c(FALSE,TRUE),
-       main="PCA from Alberta grassland plant data")
+loadings_pc1 = plant_pca@loadings[, "PC1"]
+loadings_pc2 = plant_pca@loadings[, "PC2"]
+plot(loadings_pc1, loadings_pc2, pch="", ann=F)
+arrows(0, 0, loadings_pc1, loadings_pc2)
 
-# According to the "Loadings" plot, the variables "Rye.per" and "Fdiv" seem to be responsible for a considerable part of the observed variation, being associated with both PC1 and PC2.
+text(loadings_pc1, loadings_pc2,
+     rownames(plant_pca@loadings), cex=0.9)
+title(xlab=sprintf("PC1 %0.1f%% variation explained", round(plant_pca@R2[1] * 100, 2)))
+title(ylab=sprintf("PC2 %0.1f%% variation explained", round(plant_pca@R2[2] * 100, 2)))
+title(main="PCA loadings plot from Alberta grassland plant data")
+
+# According to the "Loadings" plot, "TF.per" is the most strongly associated variable do PC1 (CWM.X13C is a close second).
+# "Plan.per" is the most strongly associated variable to PC2 (followed by Broadleaved.dock.per.tot).
 
 # 3.4
 plant_pca@R2
