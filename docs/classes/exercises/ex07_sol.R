@@ -1,4 +1,4 @@
-## Exercises 3 solutions
+## Exercises 7 solutions
 
 # 1.1
 war_data = read.csv(url("https://raw.githubusercontent.com/chrisalbon/war_of_the_five_kings_dataset/master/5kings_battles_v1.csv"), header=TRUE, row.names=1)
@@ -18,7 +18,7 @@ outcomes = table(war_data$attacker_outcome)
 
 binom.test(x=outcomes[3], n=sum(outcomes[2:3]), p=10/11)
 
-# H0: The ratio of attacking force victories during the 'War of 5 Kings' is not significantl different from the expected odds of 1:10
+# H0: The ratio of attacking force victories during the 'War of 5 Kings' is not significantly different from the expected odds of 1:10
 # The binomial test does not reject H0.
 
 # 1.4
@@ -81,11 +81,17 @@ if (!require("pcaMethods")){
 snp_pca <- pca(just_snp_data, scale="none", center=TRUE, nPcs=2,
                method="nipals")
 
-slplot(snp_pca,
-       scol=color_categories,
-       scoresLoadings=c(TRUE,FALSE),
-       main="PCA from T. lepidus SNP data",
-       sl=NULL, spch=1)
+scores_pc1 = snp_pca@scores[, "PC1"]
+scores_pc2 = snp_pca@scores[, "PC2"]
+
+plot(scores_pc1, scores_pc2,
+     col=color_categories,
+     ann=FALSE)
+
+title(main="PCA scores plot from T. lepidus SNP data")
+title(xlab=sprintf("PC1 %0.1f%% variation explained", round(snp_pca@R2[1] * 100, 2)))
+title(ylab=sprintf("PC2 %0.1f%% variation explained", round(snp_pca@R2[2] * 100, 2)))
+
 legend("bottomright", legend=unique(populations), col=unique(color_categories),
        pch=1)
 
