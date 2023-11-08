@@ -191,7 +191,7 @@ for (i in c(3:5)){
 * Use automated code! <!-- .element: class="fragment" data-fragment-index="4" -->
 * Make the data/code available  <!-- .element: class="fragment" data-fragment-index="5" -->
 
-[Now is a good chance to show github](https://github.com/StuntsPT/BP2022) <!-- .element: class="fragment" data-fragment-index="6" -->
+[Now is a good chance to show github](https://github.com/StuntsPT/BP2023) <!-- .element: class="fragment" data-fragment-index="6" -->
 
 [Now is a good chance to show gitlab](https://gitlab.com/StuntsPT/bp2023) <!-- .element: class="fragment" data-fragment-index="6" -->
 
@@ -300,31 +300,34 @@ dev.off()
 ### Automating a common task
 
 ```R
-army_size = function(war_data, alpha) {
-        # Tests if there are significant differences between two samples.
-        # Chooses the correct test based on each sample's normality.
-        # Takes a dataframe and an alpha value as input.
-        # Returns an answer.
-        
-        attacker_norm = shapiro.test(war_data[,"attacker_size"])$p.value
-        defender_norm = shapiro.test(war_data[,"defender_size"])$p.value
-        
-        if (attacker_norm <= alpha | defender_norm <= alpha){
-                p_val = wilcox.test(x=war_data[,"attacker_size"],
-                                    y=war_data[,"defender_size"],
-                                    paired=TRUE)$p.value
-        } else {
-                p_val = t.test(x=war_data[,"attacker_size"],
-                               y=war_data[,"defender_size"],
-                               paired=TRUE)$p.value
-        }
-        
-        if (p_val <= alpha) {
-                answer = "Reject H0: there are significant differences between the size of attacking and defending armies"
-        } else {
-                answer = "Do not reject H0: there are no significant differences between the size of attacking and defending armies"
-        }
-        return(answer)
+army_size = function(sampleA, sampleB, alpha, pair=FALSE) {
+  # Tests if there are significant differences between two samples.
+  # Chooses the correct test based on each sample's normality.
+  # Takes the two samples (vectors), an alpha value (numeric)
+  # and an optional "paired" (bool) arguments as input.
+  # Returns an answer.
+  # Can be further simplified by changing only the test function
+  # in the conditional.
+  
+  sampleA_norm = shapiro.test(sampleA)$p.value
+  sampleB_norm = shapiro.test(sampleB)$p.value
+  
+  if (sampleA_norm <= alpha | sampleB_norm <= alpha){
+    p_val = wilcox.test(x=sampleA,
+                        y=sampleB,
+                        paired=pair)$p.value
+  } else {
+    p_val = t.test(x=sampleA,
+                   y=sampleB,
+                   paired=pair)$p.value
+  }
+  
+  if (p_val <= alpha) {
+    answer = "Reject H0."
+  } else {
+    answer = "Do not reject H0."
+  }
+  return(answer)
 }
 
 
@@ -332,7 +335,9 @@ soif_data = read.csv("https://raw.githubusercontent.com/chrisalbon/war_of_the_fi
                      header=TRUE,
                      row.names=1)
 
-print(army_size(soif_data, 0.05))
+my_answer <- army_size(soif_data[,"attacker_size"], soif_data[,"defender_size"], 0.05)
+print("H0: there are no significant differences between attacker army size and defending army size.")
+print(my_answer)
 ```
 
 ---
@@ -351,5 +356,5 @@ sorteio = function(names_file, seed) {
     return(shuffled_names)
 }
 
-print(sorteio("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/C01_assets/nomes.txt", 12345))
+print(sorteio("https://gitlab.com/StuntsPT/bp2023/raw/master/docs/classes/C01_assets/nomes.txt", 73892))
 ```
