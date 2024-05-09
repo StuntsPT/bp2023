@@ -40,6 +40,15 @@ for (i in c("X1980", "X1990", "X2000", "X2008")){
 
 print(p.adjust(p_values, method="fdr"))
 
+# Alternative using indexing: Kudos to Margarida Curto!
+alt_p_vals = c()
+for (i in c( "X1980" , "X1990" , "X2000" , "X2008" )) {
+  answer = cholesterol_tests(male_data[, i], female_data[, i])
+  alt_p_vals[i] = answer
+}
+
+print(p.adjust(alt_p_vals, method="fdr"))
+
 # 2.2
 years = c("X1983", "X1992", "X1998", "X2003", "X2005")
 p_values = c()
